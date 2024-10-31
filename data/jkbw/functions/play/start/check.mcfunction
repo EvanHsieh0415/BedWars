@@ -16,7 +16,7 @@ execute if score #teams jkbw.mem matches 7.. run function jkbw:play/start/check_
 execute if score #teams jkbw.mem matches 8.. run function jkbw:play/start/check_marker {team:gray}
 
 # 结论
-tellraw @a "\n\n\n\n\n\n\n\n\n\n"
+tellraw @a "\n\n"
 
 execute unless score #team_mode jkbw.mem matches 1 if score #teams jkbw.mem matches 2 if entity @e[type=marker,tag=jkbw_start_check,scores={jkbw.mem=6},limit=1] run tag @e[type=marker,tag=jkbw_start_check,limit=1] add jkbw_start_ready
 execute unless score #team_mode jkbw.mem matches 1 if score #teams jkbw.mem matches 3 if entity @e[type=marker,tag=jkbw_start_check,scores={jkbw.mem=9},limit=1] run tag @e[type=marker,tag=jkbw_start_check,limit=1] add jkbw_start_ready

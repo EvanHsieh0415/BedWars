@@ -78,7 +78,7 @@ execute if score #res_mode jkbw.mem matches 0..1 if score #attack_mode jkbw.mem 
 execute if score #res_mode jkbw.mem matches 0..1 unless score #attack_mode jkbw.mem matches 1 run summon marker 10110223 10 10110223 {Tags: ["jkbw", "jkbw_display", "jkbw_display_attack"], CustomName: '"1.8-"'}
 execute if score #res_mode jkbw.mem matches 2 run summon marker 10110223 10 10110223 {Tags: ["jkbw", "jkbw_display", "jkbw_display_attack"], CustomName: '"1.8-"'}
 
-tellraw @a ["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",{"storage":"jk:bw","nbt":"txt.print.bedwars","color":"yellow"},"\n",{"storage":"jk:bw","nbt":"txt.display.attack_speed","color":"green"},": ",{"selector":"@e[type=marker,tag=jkbw_display_attack,limit=1]"}]
+tellraw @a ["\n\n",{"storage":"jk:bw","nbt":"txt.print.bedwars","color":"yellow"},"\n",{"storage":"jk:bw","nbt":"txt.display.attack_speed","color":"green"},": ",{"selector":"@e[type=marker,tag=jkbw_display_attack,limit=1]"}]
 
 execute if score #res_mode jkbw.mem matches 0 run tellraw @a ["",{"storage":"jk:bw","nbt":"txt.display.res_mode","color":"green"},": ",{"storage":"jk:bw","nbt":"txt.display.res_mode1"}]
 execute if score #res_mode jkbw.mem matches 1 run tellraw @a ["",{"storage":"jk:bw","nbt":"txt.display.res_mode","color":"green"},": ",{"storage":"jk:bw","nbt":"txt.display.res_mode2"}]

@@ -101,5 +101,4 @@ scoreboard players add @p[tag=jkbw_murder] jkbw.Player.Kills 1
 scoreboard players add @p[tag=jkbw_murder] jkbw.Player.KillsCount 1
 
 # 清理tag
-tag @a remove jkbw_murder
-tag @a remove jkbw_victim
+function jkbw:play/res/player/remove
