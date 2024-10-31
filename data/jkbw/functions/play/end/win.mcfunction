@@ -1,26 +1,26 @@
 scoreboard players set #state jkbw.mem 2
 stopsound @a
-playsound ui.toast.challenge_complete player @a 0 100 0 1000000
+playsound ui.toast.challenge_complete player @a 10110223 100 10110223 1000000000
 
-title @a title {"text":"恭喜","color":"yellow","bold":true}
+title @a title {"storage":"jk:bw","nbt":"txt.print.congrats","color":"yellow","bold":true}
 title @a times 1s 6s 1s
 
-execute if entity @p[team=jkbw.red,tag=!jkbw_outed] run title @a subtitle [{"text":"红队","color":"red"},{"text":"获得了胜利！","color":"gold"}]
-execute if entity @p[team=jkbw.blue,tag=!jkbw_outed] run title @a subtitle [{"text":"蓝队","color":"blue"},{"text":"获得了胜利！","color":"gold"}]
-execute if entity @p[team=jkbw.green,tag=!jkbw_outed] run title @a subtitle [{"text":"黄队","color":"yellow"},{"text":"获得了胜利！","color":"gold"}]
-execute if entity @p[team=jkbw.yellow,tag=!jkbw_outed] run title @a subtitle [{"text":"绿队","color":"green"},{"text":"获得了胜利！","color":"gold"}]
+execute if entity @p[team=jkbw.red,scores={jkbw.Player.State=2..3}] run function jkbw:play/end/win_ {team:red,color:red}
+execute if entity @p[team=jkbw.blue,scores={jkbw.Player.State=2..3}] run function jkbw:play/end/win_ {team:blue,color:blue}
+execute if score #teams jkbw.mem matches 3.. if entity @p[team=jkbw.green,scores={jkbw.Player.State=2..3}] run function jkbw:play/end/win_ {team:green,color:green}
+execute if score #teams jkbw.mem matches 4.. if entity @p[team=jkbw.yellow,scores={jkbw.Player.State=2..3}] run function jkbw:play/end/win_ {team:yellow,color:yellow}
+execute if score #teams jkbw.mem matches 5.. if entity @p[team=jkbw.cyan,scores={jkbw.Player.State=2..3}] run function jkbw:play/end/win_ {team:cyan,color:aqua}
+execute if score #teams jkbw.mem matches 6.. if entity @p[team=jkbw.white,scores={jkbw.Player.State=2..3}] run function jkbw:play/end/win_ {team:white,color:white}
+execute if score #teams jkbw.mem matches 7.. if entity @p[team=jkbw.pink,scores={jkbw.Player.State=2..3}] run function jkbw:play/end/win_ {team:pink,color:light_purple}
+execute if score #teams jkbw.mem matches 8.. if entity @p[team=jkbw.gray,scores={jkbw.Player.State=2..3}] run function jkbw:play/end/win_ {team:gray,color:gray}
 
-tellraw @a ["\n\n\n\n",{"text":"                    起床战争\n","color":"yellow","bold":true}]
+tellraw @a ["\n\n\n\n",{"storage":"jk:bw","nbt":"txt.print.bedwars1","color":"yellow","bold":true},"\n"]
 
-execute if entity @p[team=jkbw.red,tag=!jkbw_outed] run tellraw @a ["获胜玩家：",{"selector":"@a[team=jkbw.red]"}]
-execute if entity @p[team=jkbw.blue,tag=!jkbw_outed] run tellraw @a ["获胜玩家：",{"selector":"@a[team=jkbw.blue]"}]
-execute if entity @p[team=jkbw.green,tag=!jkbw_outed] run tellraw @a ["获胜玩家：",{"selector":"@a[team=jkbw.green]"}]
-execute if entity @p[team=jkbw.yellow,tag=!jkbw_outed] run tellraw @a ["获胜玩家：",{"selector":"@a[team=jkbw.yellow]"}]
-
-scoreboard players add @a[team=jkbw.red,tag=!jkbw_outed] jkbw.Player.Wins 1
-scoreboard players add @a[team=jkbw.blue,tag=!jkbw_outed] jkbw.Player.Wins 1
-scoreboard players add @a[team=jkbw.green,tag=!jkbw_outed] jkbw.Player.Wins 1
-scoreboard players add @a[team=jkbw.yellow,tag=!jkbw_outed] jkbw.Player.Wins 1
+tag @a remove jkbw_win
+tag @p[scores={jkbw.Player.State=2..3}] add jkbw_win
+execute as @a[scores={jkbw.Player.State=2..}] if score @s jkbw.Team.ID = @p[tag=jkbw_win] jkbw.Team.ID run tag @s add jkbw_win
+tellraw @a [{"storage":"jk:bw","nbt":"txt.print.win_players"},": ",{"selector":"@a[tag=jkbw_win]"}]
+scoreboard players add @a[tag=jkbw_win] jkbw.Player.Wins 1
 
 function jkbw:play/end/rank
 schedule function jkbw:play/end/restart 10s

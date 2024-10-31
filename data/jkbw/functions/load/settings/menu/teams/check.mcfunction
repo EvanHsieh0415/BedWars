@@ -2,50 +2,19 @@ stopsound @a
 playsound block.note_block.bell player @a[distance=..6]
 tellraw @a[tag=jkbw_admin] "\n\n\n\n\n\n\n\n\n\n"
 
-# 检测床安放
-execute as @e[limit=1,tag=jkbw_bed_red] at @s run tellraw @a[tag=jkbw_admin] {"text":"红队床安放成功！","color":"red"}
-execute as @e[limit=1,tag=jkbw_bed_blue] at @s run tellraw @a[tag=jkbw_admin] {"text":"蓝队床安放成功！","color":"blue"}
-execute if score #teams jkbw.mem matches 3.. as @e[limit=1,tag=jkbw_bed_green] at @s run tellraw @a[tag=jkbw_admin] {"text":"绿队床安放成功！","color":"green"}
-execute if score #teams jkbw.mem matches 4.. as @e[limit=1,tag=jkbw_bed_yellow] at @s run tellraw @a[tag=jkbw_admin] {"text":"黄队床安放成功！","color":"yellow"}
+function jkbw:load/settings/menu/teams/check_marker {team:red,color:red}
+function jkbw:load/settings/menu/teams/check_marker {team:blue,color:blue}
+execute if score #teams_max jkbw.mem matches 3.. run function jkbw:load/settings/menu/teams/check_marker {team:green,color:green}
+execute if score #teams_max jkbw.mem matches 4.. run function jkbw:load/settings/menu/teams/check_marker {team:yellow,color:yellow}
+execute if score #teams_max jkbw.mem matches 5.. run function jkbw:load/settings/menu/teams/check_marker {team:cyan,color:aqua}
+execute if score #teams_max jkbw.mem matches 6.. run function jkbw:load/settings/menu/teams/check_marker {team:white,color:white}
+execute if score #teams_max jkbw.mem matches 7.. run function jkbw:load/settings/menu/teams/check_marker {team:pink,color:light_purple}
+execute if score #teams_max jkbw.mem matches 8.. run function jkbw:load/settings/menu/teams/check_marker {team:gray,color:gray}
 
-execute unless entity @e[limit=1,tag=jkbw_bed_red] run tellraw @a[tag=jkbw_admin] "红队床未设置！"
-execute unless entity @e[limit=1,tag=jkbw_bed_blue] run tellraw @a[tag=jkbw_admin] "蓝队床未设置！"
-execute if score #teams jkbw.mem matches 3.. unless entity @e[limit=1,tag=jkbw_bed_green] run tellraw @a[tag=jkbw_admin] "绿队床未设置！"
-execute if score #teams jkbw.mem matches 4.. unless entity @e[limit=1,tag=jkbw_bed_yellow] run tellraw @a[tag=jkbw_admin] "黄队床未设置！"
+tellraw @a[tag=jkbw_admin] [{"storage":"jk:bw","nbt":"txt.item.egg.res_global"},":\n",{"text":"[","color":"aqua"},{"score":{"name":"#res_g_diamond","objective":"jkbw.mem"},"color":"aqua","hoverEvent":{"action":"show_text","contents":[{"translate":"item.minecraft.diamond"}]}},{"text":"]","color":"aqua"},"  ",{"text":"[","color":"green"},{"score":{"name":"#res_g_emerald","objective":"jkbw.mem"},"color":"green","hoverEvent":{"action":"show_text","contents":[{"translate":"item.minecraft.emerald"}]}},{"text":"]","color":"green"},"\n\n",{"storage":"jk:bw","nbt":"txt.print.bed_point"},":\n",{"selector":"@e[type=marker,tag=jkbw_check_bed_red,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_bed_blue,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_bed_green,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_bed_yellow,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_bed_cyan,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_bed_white,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_bed_pink,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_bed_gray,limit=1]","hoverEvent":{"action":"show_text","value":""}},"\n\n",{"storage":"jk:bw","nbt":"txt.print.spawn_point"},":\n",{"selector":"@e[type=marker,tag=jkbw_check_spawn_red,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_spawn_blue,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_spawn_green,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_spawn_yellow,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_spawn_cyan,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_spawn_white,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_spawn_pink,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_spawn_gray,limit=1]","hoverEvent":{"action":"show_text","value":""}},"\n\n",{"storage":"jk:bw","nbt":"txt.print.chest_point"},":\n",{"selector":"@e[type=marker,tag=jkbw_check_chest_red,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_chest_blue,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_chest_green,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_chest_yellow,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_chest_cyan,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_chest_white,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_chest_pink,limit=1]","hoverEvent":{"action":"show_text","value":""}}," ",{"selector":"@e[type=marker,tag=jkbw_check_chest_gray,limit=1]","hoverEvent":{"action":"show_text","value":""}}]
 
-# 检测出生点
-execute as @e[limit=1,tag=jkbw_spawn_red] at @s if block ~ ~ ~ air run tellraw @a[tag=jkbw_admin] {"text":"红队出生点已设置！","color":"red"}
-execute as @e[limit=1,tag=jkbw_spawn_blue] at @s if block ~ ~ ~ air run tellraw @a[tag=jkbw_admin] {"text":"蓝队出生点已设置！","color":"blue"}
-execute if score #teams jkbw.mem matches 3.. as @e[limit=1,tag=jkbw_spawn_green] at @s if block ~ ~ ~ air run tellraw @a[tag=jkbw_admin] {"text":"绿队出生点已设置！","color":"green"}
-execute if score #teams jkbw.mem matches 4.. as @e[limit=1,tag=jkbw_spawn_yellow] at @s if block ~ ~ ~ air run tellraw @a[tag=jkbw_admin] {"text":"黄队出生点已设置！","color":"yellow"}
-
-execute as @e[limit=1,tag=jkbw_spawn_red] at @s unless block ~ ~ ~ air run tellraw @a[tag=jkbw_admin] "红队出生点塞方块了！"
-execute as @e[limit=1,tag=jkbw_spawn_blue] at @s unless block ~ ~ ~ air run tellraw @a[tag=jkbw_admin] "蓝队出生点塞方块了！"
-execute if score #teams jkbw.mem matches 3.. as @e[limit=1,tag=jkbw_spawn_green] at @s unless block ~ ~ ~ air run tellraw @a[tag=jkbw_admin] "绿队出生点塞方块了！"
-execute if score #teams jkbw.mem matches 4.. as @e[limit=1,tag=jkbw_spawn_yellow] at @s unless block ~ ~ ~ air run tellraw @a[tag=jkbw_admin] "黄队出生点塞方块了！"
-
-execute unless entity @e[limit=1,tag=jkbw_spawn_red] run tellraw @a[tag=jkbw_admin] "红队出生点未设置！"
-execute unless entity @e[limit=1,tag=jkbw_spawn_blue] run tellraw @a[tag=jkbw_admin] "蓝队出生点未设置！"
-execute if score #teams jkbw.mem matches 3.. unless entity @e[limit=1,tag=jkbw_spawn_green] run tellraw @a[tag=jkbw_admin] "绿队出生点未设置！"
-execute if score #teams jkbw.mem matches 4.. unless entity @e[limit=1,tag=jkbw_spawn_yellow] run tellraw @a[tag=jkbw_admin] "黄队出生点未设置！"
-
-# 检测团队箱子
-execute as @e[limit=1,tag=jkbw_chest_red] at @s if block ~ ~ ~ barrel run tellraw @a[tag=jkbw_admin] {"text":"红队团队箱子已设置！","color":"red"}
-execute as @e[limit=1,tag=jkbw_chest_blue] at @s if block ~ ~ ~ barrel run tellraw @a[tag=jkbw_admin] {"text":"蓝队团队箱子已设置！","color":"blue"}
-execute if score #teams jkbw.mem matches 3.. as @e[limit=1,tag=jkbw_chest_green] at @s if block ~ ~ ~ barrel run tellraw @a[tag=jkbw_admin] {"text":"绿队团队箱子已设置！","color":"green"}
-execute if score #teams jkbw.mem matches 4.. as @e[limit=1,tag=jkbw_chest_yellow] at @s if block ~ ~ ~ barrel run tellraw @a[tag=jkbw_admin] {"text":"黄队团队箱子已设置！","color":"yellow"}
-
-execute as @e[limit=1,tag=jkbw_chest_red] at @s unless block ~ ~ ~ barrel run tellraw @a[tag=jkbw_admin] "红队团队箱子请重放！"
-execute as @e[limit=1,tag=jkbw_chest_blue] at @s unless block ~ ~ ~ barrel run tellraw @a[tag=jkbw_admin] "蓝队团队箱子请重放！"
-execute if score #teams jkbw.mem matches 3.. as @e[limit=1,tag=jkbw_chest_green] at @s unless block ~ ~ ~ barrel run tellraw @a[tag=jkbw_admin] "绿队团队箱子请重放！"
-execute if score #teams jkbw.mem matches 4.. as @e[limit=1,tag=jkbw_chest_yellow] at @s unless block ~ ~ ~ barrel run tellraw @a[tag=jkbw_admin] "黄队团队箱子请重放！"
-
-execute unless entity @e[limit=1,tag=jkbw_chest_red] run tellraw @a[tag=jkbw_admin] "红队团队箱子未设置！"
-execute unless entity @e[limit=1,tag=jkbw_chest_blue] run tellraw @a[tag=jkbw_admin] "蓝队团队箱子未设置！"
-execute if score #teams jkbw.mem matches 3.. unless entity @e[limit=1,tag=jkbw_chest_green] run tellraw @a[tag=jkbw_admin] "绿队团队箱子未设置！"
-execute if score #teams jkbw.mem matches 4.. unless entity @e[limit=1,tag=jkbw_chest_yellow] run tellraw @a[tag=jkbw_admin] "黄队团队箱子未设置！"
+# 清除
+kill @e[type=marker,tag=jkbw_check]
 
 # 菜单
-tellraw @a[tag=jkbw_admin] {"text":"\n出生点半径 3 格内无法搭建方块，\n所以出生点与床位点位置须谨慎。","color":"aqua"}
-
-tellraw @a[tag=jkbw_admin] ["\n",{"text":"[清除所有]","color":"gray","clickEvent":{"action":"run_command","value":"/function jkbw:load/settings/menu/teams/clear"},"hoverEvent":{"action":"show_text","contents":"即清理所有的床点/出生点/出生资源点/箱子点！"}},"  ",{"text":"[返回主菜单]","color":"green","clickEvent":{"action":"run_command","value":"/function jkbw:load/settings/menu"}},"  ",{"text":"[测试模式]","color":"red","bold":true,"clickEvent":{"action":"run_command","value":"/function jkbw:load/settings/menu/test/mode"},"hoverEvent":{"action":"show_text","contents":[{"text":"要开启，请把","color":"yellow"},{"text":"红队","color":"red","bold":true},"的",{"text":"出生点和床点","color":"aqua"},{"text":"放好！","color":"yellow"}]}}]
+tellraw @a[tag=jkbw_admin] ["\n",{"storage":"jk:bw","nbt":"txt.print.symbol_explain"},":\n",{"text":"[□]","color":"gray","hoverEvent":{"action":"show_text","contents":[{"storage":"jk:bw","nbt":"txt.print.symbol_1"}]}},"  ",{"text":"[-]","color":"gray","hoverEvent":{"action":"show_text","contents":[{"storage":"jk:bw","nbt":"txt.print.symbol_2"}]}},"  ",{"text":"[=]","color":"gray","hoverEvent":{"action":"show_text","contents":[{"storage":"jk:bw","nbt":"txt.print.symbol_3"}]}},"  ",{"text":"[■]","color":"gray","hoverEvent":{"action":"show_text","contents":[{"storage":"jk:bw","nbt":"txt.print.symbol_4"}]}},"\n\n",{"storage":"jk:bw","nbt":"txt.print.not_put_close","color":"aqua"},"\n\n",{"text":"[","color":"gray"},{"storage":"jk:bw","nbt":"txt.print.clear_all","color":"gray","clickEvent":{"action":"run_command","value":"/function jkbw:load/settings/menu/teams/clear"},"hoverEvent":{"action":"show_text","contents":[{"storage":"jk:bw","nbt":"txt.print.clear_all_tip"}]}},{"text":"]","color":"gray"},"  ",{"text":"[","color":"green"},{"storage":"jk:bw","nbt":"txt.print.back2mainmenu","color":"green","clickEvent":{"action":"run_command","value":"/function jkbw:load/settings/menu"}},{"text":"]","color":"green"}]

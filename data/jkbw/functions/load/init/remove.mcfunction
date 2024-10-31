@@ -16,18 +16,29 @@ scoreboard objectives remove jkbw.Team.ID
 scoreboard objectives remove jkbw.Player.Hp
 scoreboard objectives remove jkbw.Player.TeamSelect
 scoreboard objectives remove jkbw.Player.Page
+scoreboard objectives remove jkbw.Player.OpenChest
 scoreboard objectives remove jkbw.Player.Compass
 scoreboard objectives remove jkbw.Player.ShopNow
 scoreboard objectives remove jkbw.Player.LeaveGame
-scoreboard objectives remove jkbw.Player.Food
 scoreboard objectives remove jkbw.Player.Crouching
 scoreboard objectives remove jkbw.Player.BreakRed
 scoreboard objectives remove jkbw.Player.BreakBlue
 scoreboard objectives remove jkbw.Player.BreakGreen
 scoreboard objectives remove jkbw.Player.BreakYellow
-scoreboard objectives remove jkbw.Player.BrokeBad
-scoreboard objectives remove jkbw.Player.BrokeBed
-scoreboard objectives remove jkbw.Player.BreakBeds
+scoreboard objectives remove jkbw.Player.BreakCyan
+scoreboard objectives remove jkbw.Player.BreakWhite 
+scoreboard objectives remove jkbw.Player.BreakPink
+scoreboard objectives remove jkbw.Player.BreakGray
+scoreboard objectives remove jkbw.Player.Break_Red
+scoreboard objectives remove jkbw.Player.Break_Blue
+scoreboard objectives remove jkbw.Player.Break_Green
+scoreboard objectives remove jkbw.Player.Break_Yellow
+scoreboard objectives remove jkbw.Player.Break_Cyan
+scoreboard objectives remove jkbw.Player.Break_White 
+scoreboard objectives remove jkbw.Player.Break_Pink
+scoreboard objectives remove jkbw.Player.Break_Gray
+scoreboard objectives remove jkbw.Player.CountArrows
+scoreboard objectives remove jkbw.Player.CountBeds
 scoreboard objectives remove jkbw.Player.ExecuseTime
 scoreboard objectives remove jkbw.Player.Kills
 scoreboard objectives remove jkbw.Player.KillsCount
@@ -40,10 +51,6 @@ scoreboard objectives remove jkbw.Player.OwnIrons
 scoreboard objectives remove jkbw.Player.OwnGolds
 scoreboard objectives remove jkbw.Player.OwnDiamonds
 scoreboard objectives remove jkbw.Player.OwnEmeralds
-scoreboard objectives remove jkbw.Player.OwnIronsTemp
-scoreboard objectives remove jkbw.Player.OwnGoldsTemp
-scoreboard objectives remove jkbw.Player.OwnDiamondsTemp
-scoreboard objectives remove jkbw.Player.OwnEmeraldsTemp
 scoreboard objectives remove jkbw.Player.OwnExpLevels
 scoreboard objectives remove jkbw.Player.OwnExpLevelsReal
 scoreboard objectives remove jkbw.Player.HasRes
@@ -71,6 +78,14 @@ scoreboard objectives remove jkbw.Player.UseIceCD
 scoreboard objectives remove jkbw.Player.UseIceLast
 scoreboard objectives remove jkbw.Player.ID
 scoreboard objectives remove jkbw.Player.DamageType
+scoreboard objectives remove jkbw.Player.State
+scoreboard objectives remove jkbw.Bed.State
+scoreboard objectives remove jkbw.ResCD.Iron
+scoreboard objectives remove jkbw.ResCD.Gold
+scoreboard objectives remove jkbw.ResCount.Iron
+scoreboard objectives remove jkbw.ResCount.Gold
+scoreboard objectives remove jkbw.ResCount.Diamond
+scoreboard objectives remove jkbw.ResCount.Emerald
 scoreboard objectives remove jkbw.Entity.X
 scoreboard objectives remove jkbw.Entity.X1
 scoreboard objectives remove jkbw.Entity.X_int
@@ -84,6 +99,11 @@ team remove jkbw.red
 team remove jkbw.blue
 team remove jkbw.green
 team remove jkbw.yellow
+team remove jkbw.cyan
+team remove jkbw.white
+team remove jkbw.pink
+team remove jkbw.gray
+team remove jkbw.spec
 team remove jkbw.npc
 team remove jkbw.npc_alive
 team remove jkbw.npc_out
@@ -91,19 +111,24 @@ team remove jkbw.npc_red
 team remove jkbw.npc_blue
 team remove jkbw.npc_green
 team remove jkbw.npc_yellow
+team remove jkbw.npc_cyan
+team remove jkbw.npc_white
+team remove jkbw.npc_pink
+team remove jkbw.npc_gray
 
 tp @e[tag=jkbw] ~ -200 ~
 kill @e[tag=jkbw]
 stopsound @a
-tag @a remove jkbw_registered
-tag @a remove jkbw_recipe
 tag @a remove jkbw_admin
-tag @a remove jkbw_out
-tag @a remove jkbw_outed
 
 bossbar remove jkbw:map
 bossbar remove jkbw:game_progress
 
 fill 10110220 1 10110223 10110223 10 10110223 air replace
+
+data remove storage jk:bw Temp
+data remove storage jk:bw Alive
+data remove storage jk:bw Map
+data remove storage jk:bw txt
 
 function jkbw:load/ticks/clear

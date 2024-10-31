@@ -1,23 +1,13 @@
-# 剑
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "sword_stone"]}}]}] run function jkbw:play/shop/item/weapon/sword/stone
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "sword_iron"]}}]}] run function jkbw:play/shop/item/weapon/sword/iron
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "sword_diamond"]}}]}] run function jkbw:play/shop/item/weapon/sword/diamond
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "stick"]}}]}] run function jkbw:play/shop/item/weapon/sword/stick
-execute if score #attack_mode jkbw.mem matches 1 as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "shield"]}}]}] run function jkbw:play/shop/item/weapon/sword/shield
+# 方块
+execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "wool"]}}]}] run function jkbw:play/shop/item/block/main {item:wool, count:16, Res:Iron, res:iron_ingot, color:1}
+execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "terracotta"]}}]}] run function jkbw:play/shop/item/block/main {item:terracotta, count:16, Res:Iron, res:iron_ingot, color:1}
+execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "glass"]}}]}] run function jkbw:play/shop/item/block/main {item:stained_glass, count:4, Res:Iron, res:iron_ingot, color:1}
+execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "end_stone"]}}]}] run function jkbw:play/shop/item/block/main {item:end_stone, count:12, Res:Iron, res:iron_ingot, color:-1}
+execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "ladder"]}}]}] run function jkbw:play/shop/item/block/main {item:ladder, count:8, Res:Iron, res:iron_ingot, color:-1}
+execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "oak_planks"]}}]}] run function jkbw:play/shop/item/block/main {item:oak_planks, count:16, Res:Gold, res:gold_ingot, color:-1}
+execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "obsidian"]}}]}] run function jkbw:play/shop/item/block/main {item:obsidian, count:4, Res:Emerald, res:emerald, color:-1}
 
-# 弓
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "arrow"]}}]}] run function jkbw:play/shop/item/weapon/bow/arrow
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "bow1"]}}]}] run function jkbw:play/shop/item/weapon/bow/1
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "bow2"]}}]}] run function jkbw:play/shop/item/weapon/bow/2
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "bow3"]}}]}] run function jkbw:play/shop/item/weapon/bow/3
-
-# 盔甲
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "armor_chain"]}}]}] run function jkbw:play/shop/item/armor/chainmail
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "armor_iron"]}}]}] run function jkbw:play/shop/item/armor/iron
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "armor_diamond"]}}]}] run function jkbw:play/shop/item/armor/diamond
-
-# 药水
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "potion_speed"]}}]}] run function jkbw:play/shop/item/potion/speed
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "potion_jump"]}}]}] run function jkbw:play/shop/item/potion/jump
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "potion_invisi"]}}]}] run function jkbw:play/shop/item/potion/invisible
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "potion_lucky"]}}]}] run function jkbw:play/shop/item/potion/lucky
+# 工具
+execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "shears"]}}]}] run function jkbw:play/shop/item/tool/main {Tool:Shears, tool:shears}
+execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "axe"]}}]}] run function jkbw:play/shop/item/tool/main {Tool:Axe, tool:axe}
+execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "pickaxe"]}}]}] run function jkbw:play/shop/item/tool/main {Tool:Pickaxe, tool:pickaxe}

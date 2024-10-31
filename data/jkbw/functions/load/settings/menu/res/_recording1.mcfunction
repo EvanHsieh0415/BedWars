@@ -1,0 +1,1 @@
+$data modify storage jk:bw Map.mapsP.$(id).res_g.$(res).count set value $(count)

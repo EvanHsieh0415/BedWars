@@ -1,0 +1,1 @@
+$execute at @e[type=text_display,tag=jkbw_worldspawn,limit=1] run fill ~-$(r) ~ ~-$(r) ~$(r) ~ ~$(r) air replace barrier

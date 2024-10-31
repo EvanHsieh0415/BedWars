@@ -3,6 +3,10 @@ execute if entity @p[scores={jkbw.Player.UseTower=1..},team=jkbw.red] run tag @s
 execute if entity @p[scores={jkbw.Player.UseTower=1..},team=jkbw.blue] run tag @s add jkbw_tower_blue
 execute if entity @p[scores={jkbw.Player.UseTower=1..},team=jkbw.green] run tag @s add jkbw_tower_green
 execute if entity @p[scores={jkbw.Player.UseTower=1..},team=jkbw.yellow] run tag @s add jkbw_tower_yellow
+execute if entity @p[scores={jkbw.Player.UseTower=1..},team=jkbw.cyan] run tag @s add jkbw_tower_cyan
+execute if entity @p[scores={jkbw.Player.UseTower=1..},team=jkbw.white] run tag @s add jkbw_tower_white
+execute if entity @p[scores={jkbw.Player.UseTower=1..},team=jkbw.pink] run tag @s add jkbw_tower_pink
+execute if entity @p[scores={jkbw.Player.UseTower=1..},team=jkbw.gray] run tag @s add jkbw_tower_gray
 
 # 转向
 execute if entity @p[scores={jkbw.Player.UseTower=1..},y_rotation=135.1..180] run tag @s add jkbw_north

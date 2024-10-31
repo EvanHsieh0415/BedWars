@@ -1,15 +1,8 @@
-# 指向敌方
-scoreboard players operation @s[team=jkbw.red,gamemode=adventure] jkbw.Entity.X -= @p[team=!jkbw.red,gamemode=adventure] jkbw.Entity.X1
-scoreboard players operation @s[team=jkbw.red,gamemode=adventure] jkbw.Entity.Z -= @p[team=!jkbw.red,gamemode=adventure] jkbw.Entity.Z1
-scoreboard players operation @s[team=jkbw.blue,gamemode=adventure] jkbw.Entity.X -= @p[team=!jkbw.blue,gamemode=adventure] jkbw.Entity.X1
-scoreboard players operation @s[team=jkbw.blue,gamemode=adventure] jkbw.Entity.Z -= @p[team=!jkbw.blue,gamemode=adventure] jkbw.Entity.Z1
-scoreboard players operation @s[team=jkbw.green,gamemode=adventure] jkbw.Entity.X -= @p[team=!jkbw.green,gamemode=adventure] jkbw.Entity.X1
-scoreboard players operation @s[team=jkbw.green,gamemode=adventure] jkbw.Entity.Z -= @p[team=!jkbw.green,gamemode=adventure] jkbw.Entity.Z1
-scoreboard players operation @s[team=jkbw.yellow,gamemode=adventure] jkbw.Entity.X -= @p[team=!jkbw.yellow,gamemode=adventure] jkbw.Entity.X1
-scoreboard players operation @s[team=jkbw.yellow,gamemode=adventure] jkbw.Entity.Z -= @p[team=!jkbw.yellow,gamemode=adventure] jkbw.Entity.Z1
-
-# 没有敌方
-execute as @s[team=jkbw.red,gamemode=adventure] unless entity @p[team=!jkbw.red,gamemode=adventure] run function jkbw:play/compass/mode/no
-execute as @s[team=jkbw.blue,gamemode=adventure] unless entity @p[team=!jkbw.blue,gamemode=adventure] run function jkbw:play/compass/mode/no
-execute as @s[team=jkbw.green,gamemode=adventure] unless entity @p[team=!jkbw.green,gamemode=adventure] run function jkbw:play/compass/mode/no
-execute as @s[team=jkbw.yellow,gamemode=adventure] unless entity @p[team=!jkbw.yellow,gamemode=adventure] run function jkbw:play/compass/mode/no
+execute as @s[team=jkbw.red,gamemode=adventure] run function jkbw:play/compass/mode/_1_ {team:red}
+execute as @s[team=jkbw.blue,gamemode=adventure] run function jkbw:play/compass/mode/_1_ {team:blue}
+execute if score #teams jkbw.mem matches 3.. as @s[team=jkbw.green,gamemode=adventure] run function jkbw:play/compass/mode/_1_ {team:green}
+execute if score #teams jkbw.mem matches 4.. as @s[team=jkbw.yellow,gamemode=adventure] run function jkbw:play/compass/mode/_1_ {team:yellow}
+execute if score #teams jkbw.mem matches 5.. as @s[team=jkbw.cyan,gamemode=adventure] run function jkbw:play/compass/mode/_1_ {team:cyan}
+execute if score #teams jkbw.mem matches 6.. as @s[team=jkbw.white,gamemode=adventure] run function jkbw:play/compass/mode/_1_ {team:white}
+execute if score #teams jkbw.mem matches 7.. as @s[team=jkbw.pink,gamemode=adventure] run function jkbw:play/compass/mode/_1_ {team:pink}
+execute if score #teams jkbw.mem matches 8.. as @s[team=jkbw.gray,gamemode=adventure] run function jkbw:play/compass/mode/_1_ {team:gray}

@@ -1,7 +1,6 @@
 # 死亡提示
-tellraw @s {"text":"你队床炸了，无法再复活了。","color":"red","bold":true}
-tag @s add jkbw_outed
-tag @s remove jkbw_out
+tellraw @s {"storage":"jk:bw","nbt":"txt.print.cannot_respawn","color":"red","bold":true}
+scoreboard players set @s jkbw.Player.State 5
 
 # hyp掉落末影箱内容
 execute if score #shop jkbw.mem matches 0..1 run function jkbw:play/res/player/drop

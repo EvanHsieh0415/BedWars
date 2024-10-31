@@ -1,51 +1,9 @@
-execute as @s[team=jkbw.red] if entity @e[tag=jkbw_bed_red,tag=jkbw_trap_istrap_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.18
-execute as @s[team=jkbw.red] if entity @e[tag=jkbw_bed_red,tag=jkbw_trap_defend_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.19
-execute as @s[team=jkbw.red] if entity @e[tag=jkbw_bed_red,tag=jkbw_trap_alarm_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.20
-execute as @s[team=jkbw.red] if entity @e[tag=jkbw_bed_red,tag=jkbw_trap_mining_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.21
-execute as @s[team=jkbw.red] if entity @e[tag=jkbw_bed_red,tag=jkbw_trap_istrap_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.18
-execute as @s[team=jkbw.red] if entity @e[tag=jkbw_bed_red,tag=jkbw_trap_defend_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.19
-execute as @s[team=jkbw.red] if entity @e[tag=jkbw_bed_red,tag=jkbw_trap_alarm_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.20
-execute as @s[team=jkbw.red] if entity @e[tag=jkbw_bed_red,tag=jkbw_trap_mining_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.21
-execute as @s[team=jkbw.red] if entity @e[tag=jkbw_bed_red,tag=jkbw_trap_istrap_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.18
-execute as @s[team=jkbw.red] if entity @e[tag=jkbw_bed_red,tag=jkbw_trap_defend_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.19
-execute as @s[team=jkbw.red] if entity @e[tag=jkbw_bed_red,tag=jkbw_trap_alarm_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.20
-execute as @s[team=jkbw.red] if entity @e[tag=jkbw_bed_red,tag=jkbw_trap_mining_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.21
-
-execute as @s[team=jkbw.blue] if entity @e[tag=jkbw_bed_blue,tag=jkbw_trap_istrap_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.18
-execute as @s[team=jkbw.blue] if entity @e[tag=jkbw_bed_blue,tag=jkbw_trap_defend_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.19
-execute as @s[team=jkbw.blue] if entity @e[tag=jkbw_bed_blue,tag=jkbw_trap_alarm_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.20
-execute as @s[team=jkbw.blue] if entity @e[tag=jkbw_bed_blue,tag=jkbw_trap_mining_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.21
-execute as @s[team=jkbw.blue] if entity @e[tag=jkbw_bed_blue,tag=jkbw_trap_istrap_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.18
-execute as @s[team=jkbw.blue] if entity @e[tag=jkbw_bed_blue,tag=jkbw_trap_defend_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.19
-execute as @s[team=jkbw.blue] if entity @e[tag=jkbw_bed_blue,tag=jkbw_trap_alarm_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.20
-execute as @s[team=jkbw.blue] if entity @e[tag=jkbw_bed_blue,tag=jkbw_trap_mining_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.21
-execute as @s[team=jkbw.blue] if entity @e[tag=jkbw_bed_blue,tag=jkbw_trap_istrap_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.18
-execute as @s[team=jkbw.blue] if entity @e[tag=jkbw_bed_blue,tag=jkbw_trap_defend_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.19
-execute as @s[team=jkbw.blue] if entity @e[tag=jkbw_bed_blue,tag=jkbw_trap_alarm_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.20
-execute as @s[team=jkbw.blue] if entity @e[tag=jkbw_bed_blue,tag=jkbw_trap_mining_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.21
-
-execute as @s[team=jkbw.green] if entity @e[tag=jkbw_bed_green,tag=jkbw_trap_istrap_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.18
-execute as @s[team=jkbw.green] if entity @e[tag=jkbw_bed_green,tag=jkbw_trap_defend_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.19
-execute as @s[team=jkbw.green] if entity @e[tag=jkbw_bed_green,tag=jkbw_trap_alarm_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.20
-execute as @s[team=jkbw.green] if entity @e[tag=jkbw_bed_green,tag=jkbw_trap_mining_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.21
-execute as @s[team=jkbw.green] if entity @e[tag=jkbw_bed_green,tag=jkbw_trap_istrap_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.18
-execute as @s[team=jkbw.green] if entity @e[tag=jkbw_bed_green,tag=jkbw_trap_defend_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.19
-execute as @s[team=jkbw.green] if entity @e[tag=jkbw_bed_green,tag=jkbw_trap_alarm_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.20
-execute as @s[team=jkbw.green] if entity @e[tag=jkbw_bed_green,tag=jkbw_trap_mining_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.21
-execute as @s[team=jkbw.green] if entity @e[tag=jkbw_bed_green,tag=jkbw_trap_istrap_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.18
-execute as @s[team=jkbw.green] if entity @e[tag=jkbw_bed_green,tag=jkbw_trap_defend_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.19
-execute as @s[team=jkbw.green] if entity @e[tag=jkbw_bed_green,tag=jkbw_trap_alarm_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.20
-execute as @s[team=jkbw.green] if entity @e[tag=jkbw_bed_green,tag=jkbw_trap_mining_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.21
-
-execute as @s[team=jkbw.yellow] if entity @e[tag=jkbw_bed_yellow,tag=jkbw_trap_istrap_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.18
-execute as @s[team=jkbw.yellow] if entity @e[tag=jkbw_bed_yellow,tag=jkbw_trap_defend_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.19
-execute as @s[team=jkbw.yellow] if entity @e[tag=jkbw_bed_yellow,tag=jkbw_trap_alarm_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.20
-execute as @s[team=jkbw.yellow] if entity @e[tag=jkbw_bed_yellow,tag=jkbw_trap_mining_1] run item replace entity @s enderchest.24 from block 10110222 6 10110223 container.21
-execute as @s[team=jkbw.yellow] if entity @e[tag=jkbw_bed_yellow,tag=jkbw_trap_istrap_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.18
-execute as @s[team=jkbw.yellow] if entity @e[tag=jkbw_bed_yellow,tag=jkbw_trap_defend_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.19
-execute as @s[team=jkbw.yellow] if entity @e[tag=jkbw_bed_yellow,tag=jkbw_trap_alarm_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.20
-execute as @s[team=jkbw.yellow] if entity @e[tag=jkbw_bed_yellow,tag=jkbw_trap_mining_2] run item replace entity @s enderchest.25 from block 10110222 6 10110223 container.21
-execute as @s[team=jkbw.yellow] if entity @e[tag=jkbw_bed_yellow,tag=jkbw_trap_istrap_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.18
-execute as @s[team=jkbw.yellow] if entity @e[tag=jkbw_bed_yellow,tag=jkbw_trap_defend_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.19
-execute as @s[team=jkbw.yellow] if entity @e[tag=jkbw_bed_yellow,tag=jkbw_trap_alarm_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.20
-execute as @s[team=jkbw.yellow] if entity @e[tag=jkbw_bed_yellow,tag=jkbw_trap_mining_3] run item replace entity @s enderchest.26 from block 10110222 6 10110223 container.21
+# 末影箱内显示购买的陷阱
+execute as @s[team=jkbw.red] run function jkbw:play/shop/team/trap_show_ {team:red}
+execute as @s[team=jkbw.blue] run function jkbw:play/shop/team/trap_show_ {team:blue}
+execute if score #teams jkbw.mem matches 3.. as @s[team=jkbw.green] run function jkbw:play/shop/team/trap_show_ {team:green}
+execute if score #teams jkbw.mem matches 4.. as @s[team=jkbw.yellow] run function jkbw:play/shop/team/trap_show_ {team:yellow}
+execute if score #teams jkbw.mem matches 5.. as @s[team=jkbw.cyan] run function jkbw:play/shop/team/trap_show_ {team:cyan}
+execute if score #teams jkbw.mem matches 6.. as @s[team=jkbw.white] run function jkbw:play/shop/team/trap_show_ {team:white}
+execute if score #teams jkbw.mem matches 7.. as @s[team=jkbw.pink] run function jkbw:play/shop/team/trap_show_ {team:pink}
+execute if score #teams jkbw.mem matches 8.. as @s[team=jkbw.gray] run function jkbw:play/shop/team/trap_show_ {team:gray}

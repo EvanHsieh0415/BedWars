@@ -1,13 +1,9 @@
-# 方块
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "wool"]}}]}] run function jkbw:play/shop/item/block/wool
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "terracotta"]}}]}] run function jkbw:play/shop/item/block/terracotta
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "glass"]}}]}] run function jkbw:play/shop/item/block/glass
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "end_stone"]}}]}] run function jkbw:play/shop/item/block/end_stone
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "ladder"]}}]}] run function jkbw:play/shop/item/block/ladder
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "oak_planks"]}}]}] run function jkbw:play/shop/item/block/oak_planks
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "obsidian"]}}]}] run function jkbw:play/shop/item/block/obsidian
-
-# 工具
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "shears"]}}]}] run function jkbw:play/shop/item/tool/shears
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "axe"]}}]}] run function jkbw:play/shop/item/tool/axe
-execute as @s[nbt=!{EnderItems: [{tag: {jkbw: ["item", "pickaxe"]}}]}] run function jkbw:play/shop/item/tool/pickaxe
+# 选择页面
+scoreboard players set @s[nbt=!{EnderItems: [{tag: {jkbw: ["gui", "-1"]}}]}] jkbw.Player.Page -1
+scoreboard players set @s[nbt=!{EnderItems: [{tag: {jkbw: ["gui", "1"]}}]}] jkbw.Player.Page 1
+scoreboard players set @s[nbt=!{EnderItems: [{tag: {jkbw: ["gui", "2"]}}]}] jkbw.Player.Page 2
+scoreboard players set @s[nbt=!{EnderItems: [{tag: {jkbw: ["gui", "3"]}}]}] jkbw.Player.Page 3
+scoreboard players set @s[nbt=!{EnderItems: [{tag: {jkbw: ["gui", "4"]}}]}] jkbw.Player.Page 4
+scoreboard players set @s[nbt=!{EnderItems: [{tag: {jkbw: ["gui", "5"]}}]}] jkbw.Player.Page 5
+scoreboard players set @s[nbt=!{EnderItems: [{tag: {jkbw: ["gui", "6"]}}]}] jkbw.Player.Page 6
+tag @s[scores={jkbw.Player.Page=-1}] add jkbw_own_chest

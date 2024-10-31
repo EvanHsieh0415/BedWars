@@ -1,31 +1,24 @@
 playsound block.note_block.bell player @a[distance=..6]
-title @s title {"text": "请查看背包！","color": "green"}
-title @s subtitle {"text": "即生存模式物品栏。","color": "yellow"}
+title @s title {"storage":"jk:bw","nbt":"txt.print.check_inventory","color": "green"}
+title @s subtitle {"translate":"itemGroup.inventory","color": "yellow"}
 title @s times 0s 3s 1s
 clear @s
 gamemode creative @s
 
-give @s endermite_spawn_egg{display: {Name: '{"text": "商店","color": "aqua","italic": false}', Lore: ['{"text":"直接放就行了。","italic":false,"color":"yellow"}']}, EntityTag: {id: "marker", Tags: ["jkbw", "jkbw_first", "jkbw_first_shop"]}, Enchantments: [{id: "unbreaking", lvl: 10}], jkbw: ["eggs", "0"]}
-
-give @s red_wool{display: {Lore: ['{"text":"羊毛放在副手，道具放在主手。","italic":false,"color":"yellow"}']}}
-give @s blue_wool{display: {Lore: ['{"text":"羊毛放在副手，道具放在主手。","italic":false,"color":"yellow"}']}}
-give @s green_wool{display: {Lore: ['{"text":"羊毛放在副手，道具放在主手。","italic":false,"color":"yellow"}', '{"text":"开启 3 队及以上时再使用！","italic":false,"color":"red"}']}}
-give @s yellow_wool{display: {Lore: ['{"text":"羊毛放在副手，道具放在主手。","italic":false,"color":"yellow"}', '{"text":"开启 4 队时再使用！","italic":false,"color":"red"}']}}
-
-give @s villager_spawn_egg{display: {Name: '{"text":"团队箱子","color":"blue","italic":false}', Lore: ['{"text":"羊毛放在副手，道具放在主手。","italic":false,"color":"yellow"}']}, EntityTag: {id: "marker", Tags: ["jkbw", "jkbw_first", "jkbw_first_chest"]}, Enchantments: [{id: "unbreaking", lvl: 10}], jkbw: ["eggs", "1"]}
-give @s pig_spawn_egg{display: {Name: '{"text":"出生点","color":"light_purple","italic":false}', Lore: ['{"text":"羊毛放在副手，道具放在主手。","italic":false,"color":"yellow"}', '{"text":"放置的出生点将朝向玩家。","italic":false,"color":"gold"}']}, EntityTag: {id: "marker", Tags: ["jkbw", "jkbw_first", "jkbw_first_spawn"]}, Enchantments: [{id: "unbreaking", lvl: 10}], jkbw: ["eggs", "2"]}
-give @s sheep_spawn_egg{display: {Name: '{"text":"床位点","color":"yellow","italic":false}', Lore: ['{"text":"羊毛放在副手，道具放在主手。","italic":false,"color":"yellow"}', '{"text":"放置的床位点沿着玩家方向。","italic":false,"color":"gold"}']}, EntityTag: {id: "marker", Tags: ["jkbw", "jkbw_first", "jkbw_first_bed"]}, Enchantments: [{id: "unbreaking", lvl: 10}], jkbw: ["eggs", "3"]}
-give @s cat_spawn_egg{display: {Name: '{"text":"出生资源点","color":"gold","bold":true,"italic":false}', Lore: ['{"text":"羊毛放在副手，道具放在主手。","italic":false,"color":"yellow"}', '{"text":"放置的出生资源点沿着玩家方向。","italic":false,"color":"gold"}']}, EntityTag: {id: "marker", Tags: ["jkbw", "jkbw_first", "jkbw_first_spawn_res"]}, Enchantments: [{id: "unbreaking", lvl: 10}], jkbw: ["eggs", "4"]}
-
-give @s dark_oak_sign{display: {Name: '{"text":"资源模式设置","color":"green","italic":false}', Lore: ['{"text":"玩家可自己选。","italic":false,"color":"yellow"}']}, BlockEntityTag: {is_waxed: 1b, front_text: {messages: ['{"bold":false,"italic":false,"color":"green","clickEvent":{"action":"run_command","value":"/function jkbw:load/settings/menu/sign/shop/mode"},"text":"资源模式"}', '{"text":""}', '{"bold":false,"italic":false,"color":"gold","bold":true,"text":"[经典：物品]"}', '{"text":""}']}, back_text: {messages: ['{"text":"资源模式设置"}', '{"text":""}', '{"text":""}', '{"text":""}']}}, Enchantments: [{id: "unbreaking", lvl: 5}]}
-give @s dark_oak_sign{display: {Name: '{"text":"资源速率设置","color":"green","italic":false}', Lore: ['{"text":"玩家可自己选。","italic":false,"color":"yellow"}']}, BlockEntityTag: {is_waxed: 1b, front_text: {messages: ['{"bold":false,"italic":false,"color":"green","clickEvent":{"action":"run_command","value":"/function jkbw:load/settings/menu/sign/res_rate/mode"},"text":"资源速率"}', '{"text":""}', '{"bold":false,"italic":false,"color":"gold","bold":true,"text":"[1.0]"}', '{"text":""}']}, back_text: {messages: ['{"text":"资源速率设置"}', '{"text":""}', '{"text":""}', '{"text":""}']}}, Enchantments: [{id: "unbreaking", lvl: 5}]}
-give @s dark_oak_sign{display: {Name: '{"text":"攻击模式设置","color":"aqua","italic":false}', Lore: ['{"text":"玩家可自己选。","italic":false,"color":"yellow"}']}, BlockEntityTag: {is_waxed: 1b, front_text: {messages: ['{"bold":false,"italic":false,"color":"aqua","clickEvent":{"action":"run_command","value":"/function jkbw:load/settings/menu/sign/attack/mode"},"text":"攻击冷却"}', '{"text":""}', '{"bold":false,"italic":false,"color":"gold","bold":true,"text":"[无]"}', '{"text":""}']}, back_text: {messages: ['{"text":"攻击冷却设置"}', '{"text":""}', '{"text":""}', '{"text":""}']}}, Enchantments: [{id: "unbreaking", lvl: 5}]}
-give @s dark_oak_sign{display: {Name: '{"text":"队伍数量设置","color":"light_purple","italic":false}', Lore: ['{"text":"玩家可自己选。","italic":false,"color":"yellow"}']}, BlockEntityTag: {is_waxed: 1b, front_text: {messages: ['{"bold":false,"italic":false,"color":"light_purple","clickEvent":{"action":"run_command","value":"/function jkbw:load/settings/menu/sign/team/num/mode"},"text":"队伍数量"}', '{"text":""}', '{"bold":false,"italic":false,"color":"gold","bold":true,"text":"[2队]"}', '{"text":""}']}, back_text: {messages: ['{"text":"队伍数量设置"}', '{"text":""}', '{"text":""}', '{"text":""}']}}, Enchantments: [{id: "unbreaking", lvl: 5}]}
-give @s dark_oak_sign{display: {Name: '{"text":"队伍分配设置","color":"light_purple","italic":false}', Lore: ['{"text":"玩家可自己选。","italic":false,"color":"yellow"}']}, BlockEntityTag: {is_waxed: 1b, front_text: {messages: ['{"bold":false,"italic":false,"color":"light_purple","clickEvent":{"action":"run_command","value":"/function jkbw:load/settings/menu/sign/team/distribute/mode"},"text":"队伍分配"}', '{"text":""}', '{"bold":false,"italic":false,"color":"gold","bold":true,"text":"[随机]"}', '{"text":""}']}, back_text: {messages: ['{"text":"队伍分配设置"}', '{"text":""}', '{"text":""}', '{"text":""}']}}, Enchantments: [{id: "unbreaking", lvl: 5}]}
-
-give @s slime_spawn_egg{display: {Name: '{"text":"全局资源点","color":"green","bold":true,"italic":false}', Lore: ['{"text":"使用时，保证副手拿着对应资源方块。","italic":false,"color":"yellow"}']}, EntityTag: {id: "marker", Tags: ["jkbw", "jkbw_first", "jkbw_first_res"]}, Enchantments: [{id: "unbreaking", lvl: 10}], jkbw: ["eggs", "5"]}
-
-give @s diamond_block{display: {Lore: ['{"text":"矿物块放副手，资源点放主手。","italic":false,"color":"yellow"}']}}
-give @s emerald_block{display: {Lore: ['{"text":"矿物块放副手，资源点放主手。","italic":false,"color":"yellow"}']}}
-
-give @s enderman_spawn_egg{display: {Name: '{"text":"删除","color":"red","bold":true,"italic":false}', Lore: ['{"text":"将删除 6 格内起床战争相关实体！","italic":false,"color":"red"}']}, EntityTag: {id: "marker", Tags: ["jkbw", "jkbw_first", "jkbw_first_kill"]}, Enchantments: [{id: "unbreaking", lvl: 10}], jkbw: ["eggs", "6"]}
+item replace entity @s hotbar.0 from block 10110209 3 10110222 container.9
+item replace entity @s hotbar.1 from block 10110209 3 10110222 container.10
+item replace entity @s hotbar.2 from block 10110209 3 10110222 container.11
+item replace entity @s hotbar.3 from block 10110209 3 10110222 container.12
+item replace entity @s hotbar.4 from block 10110209 3 10110222 container.13
+item replace entity @s hotbar.5 from block 10110209 3 10110222 container.14
+item replace entity @s hotbar.6 from block 10110209 3 10110222 container.15
+item replace entity @s hotbar.7 from block 10110209 3 10110222 container.16
+item replace entity @s hotbar.8 from block 10110209 3 10110222 container.17
+item replace entity @s container.9 from block 10110209 3 10110222 container.18
+item replace entity @s container.10 from block 10110209 3 10110222 container.19
+item replace entity @s container.11 from block 10110209 3 10110222 container.20
+item replace entity @s container.12 from block 10110209 3 10110222 container.21
+item replace entity @s container.13 from block 10110209 3 10110222 container.22
+item replace entity @s container.14 from block 10110209 3 10110222 container.23
+item replace entity @s container.15 from block 10110209 3 10110222 container.24
+item replace entity @s container.16 from block 10110209 3 10110222 container.25

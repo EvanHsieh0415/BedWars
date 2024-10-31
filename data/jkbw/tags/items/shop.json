@@ -55,7 +55,6 @@
         "netherite_pickaxe",
 
         "golden_apple",
-        "chorus_fruit",
         "egg",
         "snowball",
         "fire_charge",
@@ -68,11 +67,17 @@
         "redstone_torch",
         "blaze_rod",
         "string",
-        "gunpowder",
+        "paper",
         "compass",
         "prismarine_shard",
+        "amethyst_shard",
 
-        "wolf_spawn_egg",
+        "chorus_fruit",
+        "trident",
+        "tipped_arrow",
+        "crossbow",
+
+        "iron_golem_spawn_egg",
 
         "blue_stained_glass_pane",
         "lime_stained_glass_pane",
@@ -80,6 +85,9 @@
         "light_gray_stained_glass_pane",
         "red_stained_glass_pane",
         "white_stained_glass_pane",
-        "#jkbw:wool"
+        "yellow_stained_glass_pane",
+        "#jkbw:wool",
+
+        "player_head"
     ]
 }

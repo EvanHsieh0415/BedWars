@@ -26,3 +26,8 @@ item replace entity @s enderchest.23 with air
 item replace entity @s enderchest.24 with air
 item replace entity @s enderchest.25 with air
 item replace entity @s enderchest.26 with air
+
+# 修改攻速
+execute if score #attack_mode jkbw.mem matches 1 run attribute @s generic.attack_speed base set 4
+execute unless score #attack_mode jkbw.mem matches 1 run attribute @s generic.attack_speed base set 20
+execute if score #res_mode jkbw.mem matches 2 run attribute @s generic.attack_speed base set 20

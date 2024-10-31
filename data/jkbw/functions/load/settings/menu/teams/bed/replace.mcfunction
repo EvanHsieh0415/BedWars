@@ -1,0 +1,10 @@
+$execute as @e[type=text_display,tag=jkbw_chest_$(team)] at @s run data merge block ~ ~ ~ {Lock:"$(team)"}
+$execute unless score #bed_type jkbw.mem matches 1 as @e[type=text_display,tag=jkbw_bed_$(team),y_rotation=180] at @s run setblock ~ ~ ~ $(team)_bed[facing=north]
+$execute unless score #bed_type jkbw.mem matches 1 as @e[type=text_display,tag=jkbw_bed_$(team),y_rotation=180] at @s run setblock ~ ~ ~-1 $(team)_bed[facing=north,part=head]
+$execute unless score #bed_type jkbw.mem matches 1 as @e[type=text_display,tag=jkbw_bed_$(team),y_rotation=-90] at @s run setblock ~ ~ ~ $(team)_bed[facing=east]
+$execute unless score #bed_type jkbw.mem matches 1 as @e[type=text_display,tag=jkbw_bed_$(team),y_rotation=-90] at @s run setblock ~1 ~ ~ $(team)_bed[facing=east,part=head]
+$execute unless score #bed_type jkbw.mem matches 1 as @e[type=text_display,tag=jkbw_bed_$(team),y_rotation=0] at @s run setblock ~ ~ ~ $(team)_bed[facing=south]
+$execute unless score #bed_type jkbw.mem matches 1 as @e[type=text_display,tag=jkbw_bed_$(team),y_rotation=0] at @s run setblock ~ ~ ~1 $(team)_bed[facing=south,part=head]
+$execute unless score #bed_type jkbw.mem matches 1 as @e[type=text_display,tag=jkbw_bed_$(team),y_rotation=90] at @s run setblock ~ ~ ~ $(team)_bed[facing=west]
+$execute unless score #bed_type jkbw.mem matches 1 as @e[type=text_display,tag=jkbw_bed_$(team),y_rotation=90] at @s run setblock ~-1 ~ ~ $(team)_bed[facing=west,part=head]
+$execute if score #bed_type jkbw.mem matches 1 as @e[type=text_display,tag=jkbw_bed_$(team)] at @s run setblock ~ ~ ~ $(team)_candle_cake[lit=true]

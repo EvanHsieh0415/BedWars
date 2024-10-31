@@ -1,24 +1,15 @@
 # 生成标记
-summon marker ~ ~-1 ~ {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~-1 ~-1 ~ {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~ ~-1 ~-1 {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~1 ~-1 ~ {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~ ~-1 ~1 {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~-1 ~-1 ~-1 {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~-1 ~-1 ~1 {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~1 ~-1 ~-1 {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~1 ~-1 ~1 {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-
-summon marker ~ ~-2 ~ {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~-1 ~-2 ~ {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~ ~-2 ~-1 {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~1 ~-2 ~ {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~ ~-2 ~1 {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~-1 ~-2 ~-1 {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~-1 ~-2 ~1 {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~1 ~-2 ~-1 {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
-summon marker ~1 ~-2 ~1 {Tags: ["jkbw", "jkbw_ice", "jkbw_new_entity"]}
+execute as @s[scores={jkbw.Player.Crouching=0}] run summon marker ~ ~-1 ~ {Tags: ["jkbw", "jkbw_ice", "jkbw_temp_marker", "jkbw_new_entity"]}
+execute as @s[scores={jkbw.Player.Crouching=0}] run summon marker ~-1 ~-1 ~ {Tags: ["jkbw", "jkbw_ice", "jkbw_temp_marker", "jkbw_new_entity"]}
+execute as @s[scores={jkbw.Player.Crouching=0}] run summon marker ~ ~-1 ~-1 {Tags: ["jkbw", "jkbw_ice", "jkbw_temp_marker", "jkbw_new_entity"]}
+execute as @s[scores={jkbw.Player.Crouching=0}] run summon marker ~1 ~-1 ~ {Tags: ["jkbw", "jkbw_ice", "jkbw_temp_marker", "jkbw_new_entity"]}
+execute as @s[scores={jkbw.Player.Crouching=0}] run summon marker ~ ~-1 ~1 {Tags: ["jkbw", "jkbw_ice", "jkbw_temp_marker", "jkbw_new_entity"]}
+execute as @s[scores={jkbw.Player.Crouching=0}] run summon marker ~-1 ~-1 ~-1 {Tags: ["jkbw", "jkbw_ice", "jkbw_temp_marker", "jkbw_new_entity"]}
+execute as @s[scores={jkbw.Player.Crouching=0}] run summon marker ~-1 ~-1 ~1 {Tags: ["jkbw", "jkbw_ice", "jkbw_temp_marker", "jkbw_new_entity"]}
+execute as @s[scores={jkbw.Player.Crouching=0}] run summon marker ~1 ~-1 ~-1 {Tags: ["jkbw", "jkbw_ice", "jkbw_temp_marker", "jkbw_new_entity"]}
+execute as @s[scores={jkbw.Player.Crouching=0}] run summon marker ~1 ~-1 ~1 {Tags: ["jkbw", "jkbw_ice", "jkbw_temp_marker", "jkbw_new_entity"]}
+execute as @e[type=marker,tag=jkbw_ice] run function jkbw:play/special/check_pos
 
 # 时间减少
 scoreboard players remove @s jkbw.Player.UseIceLast 1
-title @s actionbar [{"text": "真·冰霜行者将在","color": "yellow"},{"score":{"name": "@s","objective": "jkbw.Player.UseIceLast"},"color": "red"},"刻后失效！"]
+title @s actionbar [{"storage":"jk:bw","nbt":"txt.print.ice_walker_last1","color": "yellow"},{"score":{"name": "@s","objective": "jkbw.Player.UseIceLast"},"color": "red"},{"storage":"jk:bw","nbt":"txt.print.ice_walker_last2"}]

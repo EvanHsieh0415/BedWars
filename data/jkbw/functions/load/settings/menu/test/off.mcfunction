@@ -1,9 +1,10 @@
 title @a title ""
-title @a subtitle {"text":"测试模式已关闭！","color":"red"}
+title @a subtitle [{"storage":"jk:bw","nbt":"txt.print.test_mode","color":"red"},{"storage":"jk:bw","nbt":"txt.print.turned_off"}]
 title @a times 0s 2s 1s
 gamemode adventure @a
-tp @a @e[limit=1,tag=jkbw_worldspawn]
+clear @a
+tp @a @e[type=text_display,tag=jkbw_worldspawn,limit=1]
 function jkbw:load/settings/menu
-execute unless entity @e[limit=1,tag=jkbw_bed_red] run tellraw @a[tag=jkbw_admin] {"text":"你没放红队床点！","color":"red"}
-execute unless entity @e[limit=1,tag=jkbw_spawn_red] run tellraw @a[tag=jkbw_admin] {"text":"你没放红队出生点！","color":"red"}
-item replace entity @a[gamemode=adventure] hotbar.8 with gray_dye{jkbw: ["reg", "0"], display: {Name: '{"text":"你已取消准备","italic":false,"color":"gray"}', Lore: ['{"text":"丢弃我准备报名！","italic":false}']}}
+execute unless entity @e[type=text_display,tag=jkbw_bed_red,limit=1] run tellraw @a[tag=jkbw_admin] [{"storage":"jk:bw","nbt":"txt.display.team.red","color":"red"},{"storage":"jk:bw","nbt":"txt.display.bed_point"},{"storage":"jk:bw","nbt":"txt.print.not_exist"}]
+execute unless entity @e[type=text_display,tag=jkbw_spawn_red,limit=1] run tellraw @a[tag=jkbw_admin] [{"storage":"jk:bw","nbt":"txt.display.team.red","color":"red"},{"storage":"jk:bw","nbt":"txt.display.spawn_point1"},{"storage":"jk:bw","nbt":"txt.print.not_exist"}]
+item replace entity @a[gamemode=adventure] hotbar.8 from block 10110209 3 10110222 container.0

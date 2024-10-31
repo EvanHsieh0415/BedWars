@@ -1,32 +1,31 @@
 ## 死亡提示
 # 普通击杀
-execute as @s[scores={jkbw.Player.DamageType=0}] run tellraw @a [{"selector":"@s"},{"text":" 在与 ","color":"gray"},{"selector":"@p[tag=jkbw_murder]"},{"text":" 战斗时，摔成了肉酱。","color":"gray"}]
-execute as @s[scores={jkbw.Player.DamageType=1}] run tellraw @a [{"selector":"@s"},{"text":" 在与 ","color":"gray"},{"selector":"@p[tag=jkbw_murder]"},{"text":" 战斗时，落入虚空。","color":"gray"}]
-execute as @s[scores={jkbw.Player.DamageType=2}] run tellraw @a [{"selector":"@s"},{"text":" 被 ","color":"gray"},{"selector":"@p[tag=jkbw_murder]"},{"text":" 杀死了。","color":"gray"}]
-execute as @s[scores={jkbw.Player.DamageType=3}] run tellraw @a [{"selector":"@s"},{"text":" 被 ","color":"gray"},{"selector":"@p[tag=jkbw_murder]"},{"text":" 的蠹虫啃掉了脚趾。","color":"gray"}]
-execute as @s[scores={jkbw.Player.DamageType=4}] run tellraw @a [{"selector":"@s"},{"text":" 被 ","color":"gray"},{"selector":"@p[tag=jkbw_murder]"},{"text":" 的铁傀儡砸扁了。","color":"gray"}]
-execute as @s[scores={jkbw.Player.DamageType=5}] run tellraw @a [{"selector":"@s"},{"text":" 被 ","color":"gray"},{"selector":"@p[tag=jkbw_murder]"},{"text":" 炸死了。","color":"gray"}]
-execute as @s[scores={jkbw.Player.DamageType=6}] run tellraw @a [{"selector":"@s"},{"text":" 被 ","color":"gray"},{"selector":"@p[tag=jkbw_murder]"},{"text":" 射杀了。","color":"gray"}]
+execute as @s[scores={jkbw.Player.DamageType=0}] run tellraw @a ["",{"selector":"@s"}," ",{"storage":"jk:bw","nbt":"txt.print.death.0_","color":"gray"}," ",{"selector":"@p[tag=jkbw_murder]"}," ",{"storage":"jk:bw","nbt":"txt.print.death.0__","color":"gray"}]
+execute as @s[scores={jkbw.Player.DamageType=1}] run tellraw @a ["",{"selector":"@s"}," ",{"storage":"jk:bw","nbt":"txt.print.death.1_","color":"gray"}," ",{"selector":"@p[tag=jkbw_murder]"}," ",{"storage":"jk:bw","nbt":"txt.print.death.1__","color":"gray"}]
+execute as @s[scores={jkbw.Player.DamageType=2}] run tellraw @a ["",{"selector":"@s"}," ",{"storage":"jk:bw","nbt":"txt.print.death.2_","color":"gray"}," ",{"selector":"@p[tag=jkbw_murder]"}," ",{"storage":"jk:bw","nbt":"txt.print.death.2__","color":"gray"}]
+execute as @s[scores={jkbw.Player.DamageType=3}] run tellraw @a ["",{"selector":"@s"}," ",{"storage":"jk:bw","nbt":"txt.print.death.3_","color":"gray"}," ",{"selector":"@p[tag=jkbw_murder]"}," ",{"storage":"jk:bw","nbt":"txt.print.death.3__","color":"gray"}]
+execute as @s[scores={jkbw.Player.DamageType=4}] run tellraw @a ["",{"selector":"@s"}," ",{"storage":"jk:bw","nbt":"txt.print.death.4_","color":"gray"}," ",{"selector":"@p[tag=jkbw_murder]"}," ",{"storage":"jk:bw","nbt":"txt.print.death.4__","color":"gray"}]
+execute as @s[scores={jkbw.Player.DamageType=5}] run tellraw @a ["",{"selector":"@s"}," ",{"storage":"jk:bw","nbt":"txt.print.death.5_","color":"gray"}," ",{"selector":"@p[tag=jkbw_murder]"}," ",{"storage":"jk:bw","nbt":"txt.print.death.5__","color":"gray"}]
+execute as @s[scores={jkbw.Player.DamageType=6}] run tellraw @a ["",{"selector":"@s"}," ",{"storage":"jk:bw","nbt":"txt.print.death.6_","color":"gray"}," ",{"selector":"@p[tag=jkbw_murder]"}," ",{"storage":"jk:bw","nbt":"txt.print.death.6__","color":"gray"}]
 
-# 最终击杀
-execute as @s[team=jkbw.red] if entity @e[limit=1,tag=jkbw_bed_red,tag=jkbw_bed_no_block] run tellraw @a {"text":"最终击杀！","color":"aqua","bold":true}
-execute as @s[team=jkbw.blue] if entity @e[limit=1,tag=jkbw_bed_blue,tag=jkbw_bed_no_block] run tellraw @a {"text":"最终击杀！","color":"aqua","bold":true}
-execute as @s[team=jkbw.green] if entity @e[limit=1,tag=jkbw_bed_green,tag=jkbw_bed_no_block] run tellraw @a {"text":"最终击杀！","color":"aqua","bold":true}
-execute as @s[team=jkbw.yellow] if entity @e[limit=1,tag=jkbw_bed_yellow,tag=jkbw_bed_no_block] run tellraw @a {"text":"最终击杀！","color":"aqua","bold":true}
-
-execute if score #shop_mode jkbw.mem matches 0..1 as @s[team=jkbw.red] if entity @e[limit=1,tag=jkbw_bed_red,tag=jkbw_bed_no_block] run tellraw @p[tag=jkbw_murder] {"text":"对手末影箱内容物已掉落在对方基地资源点中。","color":"green"}
-execute if score #shop_mode jkbw.mem matches 0..1 as @s[team=jkbw.blue] if entity @e[limit=1,tag=jkbw_bed_blue,tag=jkbw_bed_no_block] run tellraw @p[tag=jkbw_murder] {"text":"对手末影箱内容物已掉落在对方基地资源点中。","color":"green"}
-execute if score #shop_mode jkbw.mem matches 0..1 as @s[team=jkbw.green] if entity @e[limit=1,tag=jkbw_bed_green,tag=jkbw_bed_no_block] run tellraw @p[tag=jkbw_murder] {"text":"对手末影箱内容物已掉落在对方基地资源点中。","color":"green"}
-execute if score #shop_mode jkbw.mem matches 0..1 as @s[team=jkbw.yellow] if entity @e[limit=1,tag=jkbw_bed_yellow,tag=jkbw_bed_no_block] run tellraw @p[tag=jkbw_murder] {"text":"对手末影箱内容物已掉落在对方基地资源点中。","color":"green"}
+# 末影箱物资掉落
+execute if score #res_mode jkbw.mem matches 0..1 as @s[team=jkbw.red] if entity @e[type=text_display,tag=jkbw_bed_red,scores={jkbw.Bed.State=3},limit=1] run tellraw @p[tag=jkbw_murder] {"storage":"jk:bw","nbt":"txt.print.final_kill_tip","color":"green"}
+execute if score #res_mode jkbw.mem matches 0..1 as @s[team=jkbw.blue] if entity @e[type=text_display,tag=jkbw_bed_blue,scores={jkbw.Bed.State=3},limit=1] run tellraw @p[tag=jkbw_murder] {"storage":"jk:bw","nbt":"txt.print.final_kill_tip","color":"green"}
+execute if score #res_mode jkbw.mem matches 0..1 as @s[team=jkbw.green] if entity @e[type=text_display,tag=jkbw_bed_green,scores={jkbw.Bed.State=3},limit=1] run tellraw @p[tag=jkbw_murder] {"storage":"jk:bw","nbt":"txt.print.final_kill_tip","color":"green"}
+execute if score #res_mode jkbw.mem matches 0..1 as @s[team=jkbw.yellow] if entity @e[type=text_display,tag=jkbw_bed_yellow,scores={jkbw.Bed.State=3},limit=1] run tellraw @p[tag=jkbw_murder] {"storage":"jk:bw","nbt":"txt.print.final_kill_tip","color":"green"}
+execute if score #res_mode jkbw.mem matches 0..1 as @s[team=jkbw.cyan] if entity @e[type=text_display,tag=jkbw_bed_cyan,scores={jkbw.Bed.State=3},limit=1] run tellraw @p[tag=jkbw_murder] {"storage":"jk:bw","nbt":"txt.print.final_kill_tip","color":"green"}
+execute if score #res_mode jkbw.mem matches 0..1 as @s[team=jkbw.white] if entity @e[type=text_display,tag=jkbw_bed_white,scores={jkbw.Bed.State=3},limit=1] run tellraw @p[tag=jkbw_murder] {"storage":"jk:bw","nbt":"txt.print.final_kill_tip","color":"green"}
+execute if score #res_mode jkbw.mem matches 0..1 as @s[team=jkbw.pink] if entity @e[type=text_display,tag=jkbw_bed_pink,scores={jkbw.Bed.State=3},limit=1] run tellraw @p[tag=jkbw_murder] {"storage":"jk:bw","nbt":"txt.print.final_kill_tip","color":"green"}
+execute if score #res_mode jkbw.mem matches 0..1 as @s[team=jkbw.gray] if entity @e[type=text_display,tag=jkbw_bed_gray,scores={jkbw.Bed.State=3},limit=1] run tellraw @p[tag=jkbw_murder] {"storage":"jk:bw","nbt":"txt.print.final_kill_tip","color":"green"}
 
 # 物资给予
-execute if score #shop_mode jkbw.mem matches 1..2 as @s[scores={jkbw.Player.OwnExpLevelsReal=1..}] run tellraw @p[tag=jkbw_murder] [{"text":"+","color":"green"},{"score":{"name":"@s","objective":"jkbw.Player.OwnExpLevelsReal"}},"经验"]
-execute if score #shop_mode jkbw.mem matches 1..2 run scoreboard players operation @p[tag=jkbw_murder] jkbw.Player.OwnExpLevels += @s jkbw.Player.OwnExpLevelsReal
+execute if score #res_mode jkbw.mem matches 1..2 as @s[scores={jkbw.Player.OwnExpLevelsReal=1..}] run tellraw @p[tag=jkbw_murder] [{"text":"+","color":"green"},{"score":{"name":"@s","objective":"jkbw.Player.OwnExpLevelsReal"}}," ",{"storage":"jk:bw","nbt":"txt.item.shop.lvl"}]
+execute if score #res_mode jkbw.mem matches 1..2 run scoreboard players operation @p[tag=jkbw_murder] jkbw.Player.OwnExpLevels += @s jkbw.Player.OwnExpLevelsReal
 
-execute as @s[scores={jkbw.Player.OwnIrons=1..}] run tellraw @p[tag=jkbw_murder] ["+",{"score":{"name":"@s","objective":"jkbw.Player.OwnIrons"}},"铁锭"]
-execute as @s[scores={jkbw.Player.OwnGolds=1..}] run tellraw @p[tag=jkbw_murder] [{"text":"+","color":"gold"},{"score":{"name":"@s","objective":"jkbw.Player.OwnGolds"}},"金锭"]
-execute as @s[scores={jkbw.Player.OwnDiamonds=1..}] run tellraw @p[tag=jkbw_murder] [{"text":"+","color":"aqua"},{"score":{"name":"@s","objective":"jkbw.Player.OwnDiamonds"}},"钻石"]
-execute as @s[scores={jkbw.Player.OwnEmeralds=1..}] run tellraw @p[tag=jkbw_murder] [{"text":"+","color":"green"},{"score":{"name":"@s","objective":"jkbw.Player.OwnEmeralds"}},"绿宝石"]
+execute as @s[scores={jkbw.Player.OwnIrons=1..}] run tellraw @p[tag=jkbw_murder] ["+",{"score":{"name":"@s","objective":"jkbw.Player.OwnIrons"}}," ",{"translate":"item.minecraft.iron_ingot"}]
+execute as @s[scores={jkbw.Player.OwnGolds=1..}] run tellraw @p[tag=jkbw_murder] [{"text":"+","color":"gold"},{"score":{"name":"@s","objective":"jkbw.Player.OwnGolds"}}," ",{"translate":"item.minecraft.gold_ingot"}]
+execute as @s[scores={jkbw.Player.OwnDiamonds=1..}] run tellraw @p[tag=jkbw_murder] [{"text":"+","color":"aqua"},{"score":{"name":"@s","objective":"jkbw.Player.OwnDiamonds"}}," ",{"translate":"item.minecraft.diamond"}]
+execute as @s[scores={jkbw.Player.OwnEmeralds=1..}] run tellraw @p[tag=jkbw_murder] [{"text":"+","color":"green"},{"score":{"name":"@s","objective":"jkbw.Player.OwnEmeralds"}}," ",{"translate":"item.minecraft.emerald"}]
 
 ## 给资源
 # 检查物品栏
@@ -88,14 +87,14 @@ summon item 10110223 2 10110223 {Item: {id: "minecraft:black_wool", Count: 1b}, 
 data modify entity @e[type=item,tag=jkbw_commonkill26,limit=1] Item set from entity @s Inventory[{Slot: 26b}]
 
 # 清理
-kill @e[tag=jkbw_commonkill_item,type=item,nbt={Item: {id: "minecraft:black_wool"}}]
-tag @e[tag=jkbw_commonkill_item,type=item,nbt={Item: {id: "minecraft:iron_ingot"}}] add jkbw_commonkill_res
-tag @e[tag=jkbw_commonkill_item,type=item,nbt={Item: {id: "minecraft:gold_ingot"}}] add jkbw_commonkill_res
-tag @e[tag=jkbw_commonkill_item,type=item,nbt={Item: {id: "minecraft:diamond"}}] add jkbw_commonkill_res
-tag @e[tag=jkbw_commonkill_item,type=item,nbt={Item: {id: "minecraft:emerald"}}] add jkbw_commonkill_res
+kill @e[type=item,tag=jkbw_commonkill_item,nbt={Item: {id: "minecraft:black_wool"}}]
+tag @e[type=item,tag=jkbw_commonkill_item,nbt={Item: {id: "minecraft:iron_ingot"}}] add jkbw_commonkill_res
+tag @e[type=item,tag=jkbw_commonkill_item,nbt={Item: {id: "minecraft:gold_ingot"}}] add jkbw_commonkill_res
+tag @e[type=item,tag=jkbw_commonkill_item,nbt={Item: {id: "minecraft:diamond"}}] add jkbw_commonkill_res
+tag @e[type=item,tag=jkbw_commonkill_item,nbt={Item: {id: "minecraft:emerald"}}] add jkbw_commonkill_res
 
 # 传送物品
-tp @e[tag=jkbw_commonkill_res] @p[tag=jkbw_murder]
+tp @e[type=item,tag=jkbw_commonkill_res] @p[tag=jkbw_murder]
 
 # 击杀数 +1
 scoreboard players add @p[tag=jkbw_murder] jkbw.Player.Kills 1

@@ -1,2 +1,2 @@
-tellraw @a [{"text":"【起床战争】","color":"yellow"},{"selector":"@s"},{"text":" 重新加入了游戏。","color":"green"}]
+tellraw @a ["",{"storage":"jk:bw","nbt":"txt.print.bedwars","color":"yellow"}," ",{"selector":"@s"}," ",{"storage":"jk:bw","nbt":"txt.print.rejoin_game","color":"green"}]
 kill @s

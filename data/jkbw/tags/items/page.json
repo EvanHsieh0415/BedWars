@@ -1,11 +1,14 @@
 {
     "values": [
+        "ender_eye",
         "white_wool",
         "iron_sword",
         "tnt",
+        "compass",
         "diamond_chestplate",
-        "diamond_sword",
-        "cut_sandstone",
-        "ender_eye"
+        "tripwire_hook",
+        "golden_sword",
+        "golden_chestplate",
+        "potion"
     ]
 }
