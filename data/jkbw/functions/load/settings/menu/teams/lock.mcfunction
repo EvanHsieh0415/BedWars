@@ -9,4 +9,4 @@ execute if score #teams jkbw.mem matches 7.. run function jkbw:load/settings/men
 execute if score #teams jkbw.mem matches 8.. run function jkbw:load/settings/menu/teams/bed/replace {team:gray}
 
 # 团队箱子清空
-execute as @e[type=text_display,tag=jkbw_chest_display] at @s run data merge block ~ ~ ~ {Items:[]}
+execute at @e[type=text_display,tag=jkbw_chest_display] run data merge block ~ ~ ~ {Items:[]}

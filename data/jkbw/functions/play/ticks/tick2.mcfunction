@@ -10,10 +10,10 @@ execute as @e[type=text_display,tag=jkbw_point,scores={jkbw.Temp=1}] at @s run t
 scoreboard players reset @e[type=text_display,tag=jkbw_point] jkbw.Temp
 
 # 作为商店的末影箱不能被破坏
-execute as @e[type=text_display,tag=jkbw_chest_shop,y_rotation=180] at @s run setblock ~ ~ ~ ender_chest[facing=south]
-execute as @e[type=text_display,tag=jkbw_chest_shop,y_rotation=-90] at @s run setblock ~ ~ ~ ender_chest[facing=west]
-execute as @e[type=text_display,tag=jkbw_chest_shop,y_rotation=0] at @s run setblock ~ ~ ~ ender_chest[facing=north]
-execute as @e[type=text_display,tag=jkbw_chest_shop,y_rotation=90] at @s run setblock ~ ~ ~ ender_chest[facing=east]
+execute at @e[type=text_display,tag=jkbw_chest_shop,y_rotation=180] run setblock ~ ~ ~ ender_chest[facing=south]
+execute at @e[type=text_display,tag=jkbw_chest_shop,y_rotation=-90] run setblock ~ ~ ~ ender_chest[facing=west]
+execute at @e[type=text_display,tag=jkbw_chest_shop,y_rotation=0] run setblock ~ ~ ~ ender_chest[facing=north]
+execute at @e[type=text_display,tag=jkbw_chest_shop,y_rotation=90] run setblock ~ ~ ~ ender_chest[facing=east]
 
 # 无限火力下箭变成凋灵之首
 execute if score #res_mode jkbw.mem matches 2 if score #time jkbw.mem <= #time6 jkbw.mem as @e[type=arrow] at @s run function jkbw:play/special/arrow2skull
