@@ -13,10 +13,12 @@ $scoreboard players operation #WXmax jkbw.mem = #WX$(id)max jkbw.mem
 $scoreboard players operation #WXmin jkbw.mem = #WX$(id)min jkbw.mem
 $scoreboard players operation #WZmax jkbw.mem = #WZ$(id)max jkbw.mem
 $scoreboard players operation #WZmin jkbw.mem = #WZ$(id)min jkbw.mem
-$scoreboard players operation #WY jkbw.mem = #WY$(id) jkbw.mem
+$scoreboard players operation #WY jkbw.mem = #WY$(id) jkbw.mem 
 $scoreboard players operation #WYmax_ jkbw.mem = #WY$(id)max_ jkbw.mem
 $scoreboard players operation #WYmin jkbw.mem = #WY$(id)min jkbw.mem
 $scoreboard players operation #WYmin_ jkbw.mem = #WY$(id)min_ jkbw.mem
+$scoreboard players operation #WYmin.5 jkbw.mem = #WY$(id)min.5 jkbw.mem
+$scoreboard players operation #WYmin._5 jkbw.mem = #WY$(id)min._5 jkbw.mem
 
 # 更新展示实体版本
 scoreboard players add #display_set jkbw.mem 1

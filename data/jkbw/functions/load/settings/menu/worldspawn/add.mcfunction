@@ -34,7 +34,11 @@ scoreboard players operation #WYmax_ jkbw.mem = #WY jkbw.mem
 scoreboard players add #WYmax_ jkbw.mem 100
 $scoreboard players set #WYmin jkbw.mem $(ymin)
 scoreboard players operation #WYmin_ jkbw.mem = #WYmin jkbw.mem
+scoreboard players operation #WYmin.5 jkbw.mem = #WYmin jkbw.mem
+scoreboard players operation #WYmin._5 jkbw.mem = #WYmin jkbw.mem
 scoreboard players remove #WYmin_ jkbw.mem 30
+scoreboard players add #WYmin.5 jkbw.mem 5
+scoreboard players remove #WYmin._5 jkbw.mem 5
 
 # 边界XZ
 execute store result score #WX jkbw.mem run data get entity @s Pos[0]
@@ -61,6 +65,8 @@ $scoreboard players operation #WY$(id) jkbw.mem = #WY jkbw.mem
 $scoreboard players operation #WY$(id)max_ jkbw.mem = #WYmax_ jkbw.mem
 $scoreboard players operation #WY$(id)min jkbw.mem = #WYmin jkbw.mem
 $scoreboard players operation #WY$(id)min_ jkbw.mem = #WYmin_ jkbw.mem
+$scoreboard players operation #WY$(id)min.5 jkbw.mem = #WYmin.5 jkbw.mem
+$scoreboard players operation #WY$(id)min._5 jkbw.mem = #WYmin._5 jkbw.mem
 
 # 其他
 scoreboard players set #tutorial jkbw.mem 2
