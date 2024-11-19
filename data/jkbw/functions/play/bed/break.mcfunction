@@ -1,42 +1,37 @@
-# as @a[gamemode=adventure] at @s
-# 破坏自己队伍的床
-scoreboard players set @s[team=jkbw.red,scores={jkbw.Player.BreakRed=1}] jkbw.Player.BrokeBad 1
-scoreboard players set @s[team=jkbw.blue,scores={jkbw.Player.BreakBlue=1}] jkbw.Player.BrokeBad 1
-scoreboard players set @s[team=jkbw.green,scores={jkbw.Player.BreakGreen=1}] jkbw.Player.BrokeBad 1
-scoreboard players set @s[team=jkbw.yellow,scores={jkbw.Player.BreakYellow=1}] jkbw.Player.BrokeBad 1
+# 先按队伍检测破坏床
+execute unless score #bed_type jkbw.mem matches 1 as @s[scores={jkbw.Player.BreakRed=1}] run function jkbw:play/bed/break_check/red
+execute unless score #bed_type jkbw.mem matches 1 as @s[scores={jkbw.Player.BreakBlue=1}] run function jkbw:play/bed/break_check/blue
+execute unless score #bed_type jkbw.mem matches 1 if score #teams jkbw.mem matches 3.. as @s[scores={jkbw.Player.BreakGreen=1}] run function jkbw:play/bed/break_check/green
+execute unless score #bed_type jkbw.mem matches 1 if score #teams jkbw.mem matches 4.. as @s[scores={jkbw.Player.BreakYellow=1}] run function jkbw:play/bed/break_check/yellow
+execute unless score #bed_type jkbw.mem matches 1 if score #teams jkbw.mem matches 5.. as @s[scores={jkbw.Player.BreakCyan=1}] run function jkbw:play/bed/break_check/cyan
+execute unless score #bed_type jkbw.mem matches 1 if score #teams jkbw.mem matches 6.. as @s[scores={jkbw.Player.BreakWhite=1}] run function jkbw:play/bed/break_check/white
+execute unless score #bed_type jkbw.mem matches 1 if score #teams jkbw.mem matches 7.. as @s[scores={jkbw.Player.BreakPink=1}] run function jkbw:play/bed/break_check/pink
+execute unless score #bed_type jkbw.mem matches 1 if score #teams jkbw.mem matches 8.. as @s[scores={jkbw.Player.BreakGray=1}] run function jkbw:play/bed/break_check/gray
 
-execute as @s[team=jkbw.red,scores={jkbw.Player.BrokeBad=1}] run function jkbw:load/settings/menu/teams/bed/replace/red
-execute as @s[team=jkbw.blue,scores={jkbw.Player.BrokeBad=1}] run function jkbw:load/settings/menu/teams/bed/replace/blue
-execute as @s[team=jkbw.green,scores={jkbw.Player.BrokeBad=1}] run function jkbw:load/settings/menu/teams/bed/replace/green
-execute as @s[team=jkbw.yellow,scores={jkbw.Player.BrokeBad=1}] run function jkbw:load/settings/menu/teams/bed/replace/yellow
-
-title @s[scores={jkbw.Player.BrokeBad=1}] actionbar {"text":"你不能破坏自己队伍的床！","color":"red"}
-
-# 破坏对手家的床
-scoreboard players set @s[team=!jkbw.red,scores={jkbw.Player.BreakRed=1}] jkbw.Player.BrokeBed 1
-scoreboard players set @s[team=!jkbw.blue,scores={jkbw.Player.BreakBlue=1}] jkbw.Player.BrokeBed 1
-execute if score #teams jkbw.mem matches 3.. run scoreboard players set @s[team=!jkbw.green,scores={jkbw.Player.BreakGreen=1}] jkbw.Player.BrokeBed 1
-execute if score #teams jkbw.mem matches 4.. run scoreboard players set @s[team=!jkbw.yellow,scores={jkbw.Player.BreakYellow=1}] jkbw.Player.BrokeBed 1
-
-execute as @s[scores={jkbw.Player.BrokeBed=1}] run playsound entity.ender_dragon.growl player @a 0 100 0 1000000
-scoreboard players add @s[scores={jkbw.Player.BrokeBed=1}] jkbw.Player.BreakBeds 1
-
-# 通知
-execute as @s[scores={jkbw.Player.BrokeBed=1,jkbw.Player.BreakRed=1}] run tellraw @a ["\n",{"selector":"@s"}," 破坏了",{"text":" 红队 ","color":"red","bold":true},"家的床！\n"]
-execute as @s[scores={jkbw.Player.BrokeBed=1,jkbw.Player.BreakBlue=1}] run tellraw @a ["\n",{"selector":"@s"}," 破坏了",{"text":" 蓝队 ","color":"blue","bold":true},"家的床！\n"]
-execute as @s[scores={jkbw.Player.BrokeBed=1,jkbw.Player.BreakGreen=1}] run tellraw @a ["\n",{"selector":"@s"}," 破坏了",{"text":" 绿队 ","color":"green","bold":true},"家的床！\n"]
-execute as @s[scores={jkbw.Player.BrokeBed=1,jkbw.Player.BreakYellow=1}] run tellraw @a ["\n",{"selector":"@s"}," 破坏了",{"text":" 黄队 ","color":"yellow","bold":true},"家的床！\n"]
-
-# 床移除init标签
-execute as @s[scores={jkbw.Player.BrokeBed=1,jkbw.Player.BreakRed=1}] run tag @e[tag=jkbw_bed_red] remove jkbw_bed_init
-execute as @s[scores={jkbw.Player.BrokeBed=1,jkbw.Player.BreakBlue=1}] run tag @e[tag=jkbw_bed_blue] remove jkbw_bed_init
-execute as @s[scores={jkbw.Player.BrokeBed=1,jkbw.Player.BreakGreen=1}] run tag @e[tag=jkbw_bed_green] remove jkbw_bed_init
-execute as @s[scores={jkbw.Player.BrokeBed=1,jkbw.Player.BreakYellow=1}] run tag @e[tag=jkbw_bed_yellow] remove jkbw_bed_init
+execute if score #bed_type jkbw.mem matches 1 as @s[scores={jkbw.Player.Break_Red=1}] run function jkbw:play/bed/break_check/red
+execute if score #bed_type jkbw.mem matches 1 as @s[scores={jkbw.Player.Break_Blue=1}] run function jkbw:play/bed/break_check/blue
+execute if score #bed_type jkbw.mem matches 1 if score #teams jkbw.mem matches 3.. as @s[scores={jkbw.Player.Break_Green=1}] run function jkbw:play/bed/break_check/green
+execute if score #bed_type jkbw.mem matches 1 if score #teams jkbw.mem matches 4.. as @s[scores={jkbw.Player.Break_Yellow=1}] run function jkbw:play/bed/break_check/yellow
+execute if score #bed_type jkbw.mem matches 1 if score #teams jkbw.mem matches 5.. as @s[scores={jkbw.Player.Break_Cyan=1}] run function jkbw:play/bed/break_check/cyan
+execute if score #bed_type jkbw.mem matches 1 if score #teams jkbw.mem matches 6.. as @s[scores={jkbw.Player.Break_White=1}] run function jkbw:play/bed/break_check/white
+execute if score #bed_type jkbw.mem matches 1 if score #teams jkbw.mem matches 7.. as @s[scores={jkbw.Player.Break_Pink=1}] run function jkbw:play/bed/break_check/pink
+execute if score #bed_type jkbw.mem matches 1 if score #teams jkbw.mem matches 8.. as @s[scores={jkbw.Player.Break_Gray=1}] run function jkbw:play/bed/break_check/gray
 
 # 计分板处理
-scoreboard players reset @s jkbw.Player.BreakRed
-scoreboard players reset @s jkbw.Player.BreakBlue
-scoreboard players reset @s jkbw.Player.BreakGreen
-scoreboard players reset @s jkbw.Player.BreakYellow
-scoreboard players reset @s jkbw.Player.BrokeBed
-scoreboard players reset @s jkbw.Player.BrokeBad
+execute unless score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.BreakRed
+execute unless score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.BreakBlue
+execute unless score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.BreakGreen
+execute unless score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.BreakYellow
+execute unless score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.BreakCyan
+execute unless score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.BreakWhite
+execute unless score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.BreakPink
+execute unless score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.BreakGray
+
+execute if score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.Break_Red
+execute if score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.Break_Blue
+execute if score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.Break_Green
+execute if score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.Break_Yellow
+execute if score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.Break_Cyan
+execute if score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.Break_White
+execute if score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.Break_Pink
+execute if score #bed_type jkbw.mem matches 1 run scoreboard players reset @s jkbw.Player.Break_Gray

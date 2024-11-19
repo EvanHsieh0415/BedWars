@@ -1,3 +1,3 @@
-execute store result score @s jkbw.Player.HasRes if entity @e[tag=jkbw_res_emerald,dx=0,dy=-8,dz=0]
-execute as @s[scores={jkbw.Player.HasRes=4..}] run summon item ~ ~ ~ {Age: -32768, PickupDelay: 18, Invulnerable: 1, Item: {id: "emerald", Count: 4, tag: {CanPlaceOn: ["#jkbw:canplaceon"], CanDestroy: ["#jkbw:candestroy"], HideFlags: 28}}, Tags: ["jkbw", "jkbw_extra_emerald", "jkbw_res"]}
-execute as @s[scores={jkbw.Player.HasRes=4..}] run kill @e[tag=jkbw_res_emerald,dx=0,dy=-8,dz=0]
+execute store result score @s jkbw.ResCount.Emerald if entity @e[type=item,tag=jkbw_res_emerald,dx=0,dy=-8,dz=0]
+execute as @s[scores={jkbw.ResCount.Emerald=4..}] run summon item ~ ~ ~ {Age: -32768, PickupDelay: 18, Invulnerable: True, Item: {id: "emerald", Count: 4, tag: {CanPlaceOn: ["#jkbw:canplaceon"], CanDestroy: ["#jkbw:candestroy"], HideFlags: 28}}, Tags: ["jkbw", "jkbw_extra_emerald", "jkbw_res"]}
+execute as @s[scores={jkbw.ResCount.Emerald=4..}] run kill @e[type=item,tag=jkbw_res_emerald,dx=0,dy=-8,dz=0]

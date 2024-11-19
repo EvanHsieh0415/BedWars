@@ -1,0 +1,3 @@
+execute store result score @s jkbw.Player.CountArrows run clear @s arrow 0
+execute as @s[scores={jkbw.Player.CountArrows=1..}] run item replace entity @s weapon.mainhand with crossbow{jkbw:["max_crossbow"], ChargedProjectiles:[{id:"arrow",Count:1b}], Charged:true, CanPlaceOn: ["#jkbw:canplaceon"], CanDestroy: ["#jkbw:candestroy"], HideFlags: 28, Unbreakable: True}
+clear @s[scores={jkbw.Player.CountArrows=1..}] arrow 1

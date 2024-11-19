@@ -1,3 +1,2 @@
-tp @s @e[limit=1,tag=jkbw_worldspawn]
-worldborder set 211
+tp @s @e[type=text_display,tag=jkbw_worldspawn,limit=1]
 gamemode creative @s

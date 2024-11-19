@@ -7,25 +7,19 @@
         "color": "yellow"
       },
       {
-        "text": "ToolPack",
+        "text": "ToolPack\n",
         "color": "light_purple"
       },
-      "\n",
       {
         "text": "起床战争 ",
         "color": "yellow"
       },
       {
-        "text": "工具包",
+        "text": "工具包\n",
         "color": "light_purple"
       },
-      "\n",
       {
-        "text": "beta 1.4\n",
-        "color": "white"
-      },
-      {
-        "text": "作者：",
+        "text": "By ",
         "color": "white"
       },
       {
@@ -37,7 +31,7 @@
         "color": "yellow"
       },
       {
-        "text": "1.20.0-1",
+        "text": "MC 1.20.1",
         "color": "white"
       }
     ]

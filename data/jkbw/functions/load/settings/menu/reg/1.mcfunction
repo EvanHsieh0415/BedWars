@@ -1,4 +1,4 @@
-tag @s add jkbw_registered
+scoreboard players set @s jkbw.Player.State 1
 playsound entity.villager.yes player @s
 clear @s
-item replace entity @s hotbar.8 with lime_dye{jkbw: ["reg", "1"], display: {Name: '{"text":"你已准备报名","italic":false,"color":"green"}', Lore: ['{"text":"丢弃我取消报名！","italic":false}']}}
+item replace entity @s hotbar.8 from block 10110209 3 10110222 container.1

@@ -1,0 +1,10 @@
+execute at @e[type=text_display,tag=jkbw_chest_green] run data merge block ~ ~ ~ {Lock:"green"}
+execute unless score #bed_type jkbw.mem matches 1 at @e[type=text_display,tag=jkbw_bed_green,y_rotation=180] run setblock ~ ~ ~ green_bed[facing=north]
+execute unless score #bed_type jkbw.mem matches 1 at @e[type=text_display,tag=jkbw_bed_green,y_rotation=180] run setblock ~ ~ ~-1 green_bed[facing=north,part=head]
+execute unless score #bed_type jkbw.mem matches 1 at @e[type=text_display,tag=jkbw_bed_green,y_rotation=-90] run setblock ~ ~ ~ green_bed[facing=east]
+execute unless score #bed_type jkbw.mem matches 1 at @e[type=text_display,tag=jkbw_bed_green,y_rotation=-90] run setblock ~1 ~ ~ green_bed[facing=east,part=head]
+execute unless score #bed_type jkbw.mem matches 1 at @e[type=text_display,tag=jkbw_bed_green,y_rotation=0] run setblock ~ ~ ~ green_bed[facing=south]
+execute unless score #bed_type jkbw.mem matches 1 at @e[type=text_display,tag=jkbw_bed_green,y_rotation=0] run setblock ~ ~ ~1 green_bed[facing=south,part=head]
+execute unless score #bed_type jkbw.mem matches 1 at @e[type=text_display,tag=jkbw_bed_green,y_rotation=90] run setblock ~ ~ ~ green_bed[facing=west]
+execute unless score #bed_type jkbw.mem matches 1 at @e[type=text_display,tag=jkbw_bed_green,y_rotation=90] run setblock ~-1 ~ ~ green_bed[facing=west,part=head]
+execute if score #bed_type jkbw.mem matches 1 at @e[type=text_display,tag=jkbw_bed_green] run setblock ~ ~ ~ green_candle_cake[lit=true]

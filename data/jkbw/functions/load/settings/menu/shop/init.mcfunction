@@ -2,15 +2,16 @@
 # 经典
 scoreboard players set #wool jkbw.mem 4
 scoreboard players set #terracotta jkbw.mem 12
-scoreboard players set #glass jkbw.mem 12
+scoreboard players set #stained_glass jkbw.mem 12
 scoreboard players set #end_stone jkbw.mem 24
 scoreboard players set #ladder jkbw.mem 4
-scoreboard players set #planks jkbw.mem 4
+scoreboard players set #oak_planks jkbw.mem 4
 scoreboard players set #obsidian jkbw.mem 4
 
 scoreboard players set #shears1 jkbw.mem 20
 scoreboard players set #shears2 jkbw.mem 10
 scoreboard players set #shears3 jkbw.mem 4
+scoreboard players set #shears4 jkbw.mem 8
 scoreboard players set #axe1 jkbw.mem 10
 scoreboard players set #axe2 jkbw.mem 10
 scoreboard players set #axe3 jkbw.mem 3
@@ -20,9 +21,9 @@ scoreboard players set #pickaxe2 jkbw.mem 10
 scoreboard players set #pickaxe3 jkbw.mem 3
 scoreboard players set #pickaxe4 jkbw.mem 6
 
-scoreboard players set #sword1 jkbw.mem 10
-scoreboard players set #sword2 jkbw.mem 7
-scoreboard players set #sword3 jkbw.mem 3
+scoreboard players set #sword_stone jkbw.mem 10
+scoreboard players set #sword_iron jkbw.mem 7
+scoreboard players set #sword_diamond jkbw.mem 3
 scoreboard players set #stick jkbw.mem 5
 scoreboard players set #shield jkbw.mem 5
 scoreboard players set #armor1 jkbw.mem 30
@@ -34,12 +35,12 @@ scoreboard players set #bow3 jkbw.mem 6
 scoreboard players set #arrow jkbw.mem 2
 
 scoreboard players set #potion_speed jkbw.mem 1
-scoreboard players set #potion_jump jkbw.mem 1
-scoreboard players set #potion_invisible jkbw.mem 2
-scoreboard players set #potion_lucky jkbw.mem 4
+scoreboard players set #potion_jump_boost jkbw.mem 1
+scoreboard players set #potion_invisibility jkbw.mem 2
+scoreboard players set #potion_luck jkbw.mem 4
 
 scoreboard players set #apple jkbw.mem 3
-scoreboard players set #fire_charge jkbw.mem 40
+scoreboard players set #fireball jkbw.mem 40
 scoreboard players set #silverfish jkbw.mem 30
 scoreboard players set #iron_golem jkbw.mem 120
 scoreboard players set #tnt jkbw.mem 8
@@ -50,7 +51,11 @@ scoreboard players set #egg jkbw.mem 1
 scoreboard players set #tower jkbw.mem 24
 scoreboard players set #pearl jkbw.mem 4
 scoreboard players set #platform jkbw.mem 8
-scoreboard players set #fruit jkbw.mem 5
+scoreboard players set #fruit jkbw.mem 2
+scoreboard players set #trident jkbw.mem 6
+scoreboard players set #arrow_s jkbw.mem 5
+scoreboard players set #crossbow_max jkbw.mem 2
+scoreboard players set #ice_bridge jkbw.mem 5
 scoreboard players set #compass jkbw.mem 2
 
 scoreboard players set #sharpness jkbw.mem 8
@@ -134,7 +139,7 @@ scoreboard players set #urfEladder jkbw.mem 4
 scoreboard players set #urfEcobweb jkbw.mem 99
 scoreboard players set #urfEglass jkbw.mem 200
 scoreboard players set #urfEchest jkbw.mem 10
-scoreboard players set #urfEender_chest jkbw.mem 100
+scoreboard players set #urfEender_chest jkbw.mem 200
 
 scoreboard players set #urfEstone_pickaxe jkbw.mem 4
 scoreboard players set #urfEiron_pickaxe jkbw.mem 40
@@ -151,13 +156,14 @@ scoreboard players set #urfEtnt jkbw.mem 288
 scoreboard players set #urfEplatform jkbw.mem 150
 scoreboard players set #urfEtrap jkbw.mem 30
 scoreboard players set #urfEwall jkbw.mem 32
-scoreboard players set #urfEice jkbw.mem 200
-scoreboard players set #urfEback jkbw.mem 100
+scoreboard players set #urfEice_walker jkbw.mem 200
+scoreboard players set #urfEback_scroll jkbw.mem 100
 scoreboard players set #urfEcompass jkbw.mem 50
 scoreboard players set #urfEpearl jkbw.mem 500
 scoreboard players set #urfEanti_arrow jkbw.mem 150
 scoreboard players set #urfEfire_charge jkbw.mem 200
 scoreboard players set #urfEegg jkbw.mem 500
 scoreboard players set #urfEapple jkbw.mem 20
+scoreboard players set #urfEconvertor jkbw.mem 500
 
 function jkbw:load/settings/menu/shop/classic2exp

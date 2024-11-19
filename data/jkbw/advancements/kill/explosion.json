@@ -4,14 +4,12 @@
       "trigger": "minecraft:entity_killed_player",
       "conditions": {
         "killing_blow": {
-          "type": {
-            "tags": [
-              {
-                "expected": true,
-                "id": "minecraft:is_explosion"
-              }
-            ]
-          }
+          "tags": [
+            {
+              "expected": true,
+              "id": "minecraft:is_explosion"
+            }
+          ]
         }
       }
     }

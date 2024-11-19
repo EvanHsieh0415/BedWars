@@ -1,11 +1,11 @@
 # as @a[gamemode=adventure] at @s
 # 玩家剑，工具和盔甲刷新
-execute if score #shop_mode jkbw.mem matches 0..1 run function jkbw:play/team/loop/global
+execute if score #res_mode jkbw.mem matches 0..1 run function jkbw:play/team/loop/global
 
 # 玩家中途离开游戏
 execute unless score @s[scores={jkbw.Player.LeaveGame=1..}] jkbw.CurrentGame = #current_game jkbw.mem run function jkbw:play/death/left
 execute if score @s[scores={jkbw.Player.LeaveGame=1..}] jkbw.CurrentGame = #current_game jkbw.mem run function jkbw:play/death/rejoin
-scoreboard players reset @s[scores={jkbw.Player.LeaveGame=1..}] jkbw.Player.LeaveGame
+scoreboard players set @s[scores={jkbw.Player.LeaveGame=1..}] jkbw.Player.LeaveGame 0
 
 # 记录自己的坐标（带1的为不变坐标，他人计算用）
 execute store result score @s jkbw.Entity.X run data get entity @s Pos[0] 1000

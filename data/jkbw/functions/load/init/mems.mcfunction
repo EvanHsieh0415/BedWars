@@ -2,13 +2,21 @@
 # 对于玩家床点，mem是陷阱重置倒计时
 # 对于禁止放方块点，temp是记录周遭方块数量
 # 对于铁傀儡，mem和temp防止其被铁锭修复
-# 后续想到再写
 
-# shop_mode  attack_mode   teams      state
-#  资源模式    攻击模式    队伍数量    游戏状态
-scoreboard players set #shop_mode jkbw.mem 0
+# 玩家状态 player.state
+# 0 未报名，1 已报名，2 存活中，3 死亡中，4 无法复活提示，5 无法复活结束
+# 床状态 bed.state
+# 0 初始化，1 无方块提示，2 无方块结束与计分板加入队伍，3 显示人数，4 淘汰
+
+# res_mode 资源模式；0 经典，1 经验，2 无限火力
+scoreboard players set #res_mode jkbw.mem 0
+# attack_mode 攻击模式；无 1.8-，1 1.9+
 scoreboard players reset #attack_mode jkbw.mem
+# bed_type 床模式；无 床，1 蛋糕，2 带初始方块保护的床
+scoreboard players reset #bed_type jkbw.mem
+# teams 队伍数量；2~8
 scoreboard players set #teams jkbw.mem 2
+# state 游戏状态；0 等待报名，1 进行，2 获胜，3 超时
 scoreboard players set #state jkbw.mem 0
 #  res_rate     1    2    3
 # 资源产生速率  标号 整数 小数
@@ -16,12 +24,12 @@ scoreboard players set #res_rate jkbw.mem 10
 scoreboard players set #res_rate1 jkbw.mem 1
 scoreboard players set #res_rate2 jkbw.mem 1
 scoreboard players set #res_rate3 jkbw.mem 0
-#  test_mode   current_game   tutorial   feedback
-#   测试模式    当前游戏场次      教程      函数反馈
+# test_mode 测试模式；无 默认，1 开启
 scoreboard players reset #test_mode jkbw.mem
+# current_game 当前游戏场次
 scoreboard players reset #current_game jkbw.mem
+# tutorial 教程
 scoreboard players set #tutorial jkbw.mem 0
-scoreboard players set #feedback jkbw.mem 0
 # time_update  time_bed  time_fight  time_end
 # 资源升级间隔   床自毁   死斗模式间隔    结束
 scoreboard players set #time_update jkbw.mem 300
@@ -40,7 +48,15 @@ scoreboard players set #minus_emerald_urf jkbw.mem 1
 
 # 计算用数字
 scoreboard players set #-1 jkbw.mem -1
+scoreboard players set #1 jkbw.mem 1
 scoreboard players set #2 jkbw.mem 2
+scoreboard players set #3 jkbw.mem 3
+scoreboard players set #4 jkbw.mem 4
+scoreboard players set #5 jkbw.mem 5
+scoreboard players set #6 jkbw.mem 6
+scoreboard players set #7 jkbw.mem 7
+scoreboard players set #8 jkbw.mem 8
+scoreboard players set #9 jkbw.mem 9
 scoreboard players set #10 jkbw.mem 10
 scoreboard players set #60 jkbw.mem 60
 scoreboard players set #500 jkbw.mem 500

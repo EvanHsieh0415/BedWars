@@ -1,5 +1,5 @@
-tag @s remove jkbw_registered
+scoreboard players set @s jkbw.Player.State 0
 playsound entity.villager.no player @s
 clear @s
-item replace entity @s hotbar.8 with gray_dye{jkbw: ["reg", "0"], display: {Name: '{"text":"你已取消准备","italic":false,"color":"gray"}', Lore: ['{"text":"丢弃我准备报名！","italic":false}']}}
+item replace entity @s hotbar.8 from block 10110209 3 10110222 container.0
 scoreboard players set @s jkbw.Player.TeamSelect 0

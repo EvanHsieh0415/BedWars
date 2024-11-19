@@ -25,7 +25,7 @@
         "player": [
           {
             "scores": {
-              "jkbw.Player.BreakBeds": {
+              "jkbw.Player.CountBeds": {
                 "min": 1
               }
             },

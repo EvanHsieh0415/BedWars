@@ -3,19 +3,14 @@
     "jkbw": {
       "trigger": "minecraft:entity_hurt_player",
       "conditions": {
-        "damage": {
-          "type": {
-            "tags": [
-              {
-                "expected": true,
-                "id": "minecraft:bypasses_armor"
-              }
-            ]
-          }
-        },
         "player": {
           "effects": {
-            "wither": {}
+            "minecraft:wither": {}
+          }
+        },
+        "damage": {
+          "source_entity": {
+            "type": "wither_skull"
           }
         }
       }

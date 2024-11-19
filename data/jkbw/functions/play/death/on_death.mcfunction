@@ -2,14 +2,16 @@ scoreboard players reset @s jkbw.Player.DeathImp
 # 常规
 scoreboard players add @s jkbw.Player.Death 1
 scoreboard players set @s jkbw.Player.RebornTime 6
+scoreboard players set @s jkbw.Player.State 3
+execute if score #test_mode jkbw.mem matches 1 run scoreboard players set @s jkbw.Player.RebornTime 1
 gamemode spectator @s
-tp @s @e[limit=1,tag=jkbw_worldspawn]
+tp @s @e[type=text_display,tag=jkbw_worldspawn,limit=1]
 
 # 工具等级 -1
 scoreboard players remove @s[scores={jkbw.Player.AxeLevels=2..}] jkbw.Player.AxeLevels 1
 scoreboard players remove @s[scores={jkbw.Player.PickaxeLevels=2..}] jkbw.Player.PickaxeLevels 1
 scoreboard players remove @s[scores={jkbw.Player.ShearsLevels=2..}] jkbw.Player.ShearsLevels 1
-execute if score #shop_mode jkbw.mem matches 0..1 run scoreboard players set @s jkbw.Player.Compass 0
+execute if score #res_mode jkbw.mem matches 0..1 run scoreboard players set @s jkbw.Player.Compass 0
 
 # 道具
 scoreboard players reset @s jkbw.Player.UseBackLast
@@ -23,17 +25,36 @@ execute if entity @p[tag=jkbw_murder] run tag @s[tag=jkbw_vic] add jkbw_victim
 tag @s[tag=jkbw_vic] remove jkbw_vic
 
 # 标记无床死亡
-execute if entity @e[tag=jkbw_bed_red,limit=1,tag=jkbw_bed_no_block] run tag @s[team=jkbw.red] add jkbw_out
-execute if entity @e[tag=jkbw_bed_blue,limit=1,tag=jkbw_bed_no_block] run tag @s[team=jkbw.blue] add jkbw_out
-execute if entity @e[tag=jkbw_bed_green,limit=1,tag=jkbw_bed_no_block] run tag @s[team=jkbw.green] add jkbw_out
-execute if entity @e[tag=jkbw_bed_yellow,limit=1,tag=jkbw_bed_no_block] run tag @s[team=jkbw.yellow] add jkbw_out
+execute if entity @e[type=text_display,tag=jkbw_bed_red,scores={jkbw.Bed.State=3..4},limit=1] run scoreboard players set @s[team=jkbw.red] jkbw.Player.State 4
+execute if entity @e[type=text_display,tag=jkbw_bed_blue,scores={jkbw.Bed.State=3..4},limit=1] run scoreboard players set @s[team=jkbw.blue] jkbw.Player.State 4
+execute if score #teams jkbw.mem matches 3.. if entity @e[type=text_display,tag=jkbw_bed_green,scores={jkbw.Bed.State=3..4},limit=1] run scoreboard players set @s[team=jkbw.green] jkbw.Player.State 4
+execute if score #teams jkbw.mem matches 4.. if entity @e[type=text_display,tag=jkbw_bed_yellow,scores={jkbw.Bed.State=3..4},limit=1] run scoreboard players set @s[team=jkbw.yellow] jkbw.Player.State 4
+execute if score #teams jkbw.mem matches 5.. if entity @e[type=text_display,tag=jkbw_bed_cyan,scores={jkbw.Bed.State=3..4},limit=1] run scoreboard players set @s[team=jkbw.cyan] jkbw.Player.State 4
+execute if score #teams jkbw.mem matches 6.. if entity @e[type=text_display,tag=jkbw_bed_white,scores={jkbw.Bed.State=3..4},limit=1] run scoreboard players set @s[team=jkbw.white] jkbw.Player.State 4
+execute if score #teams jkbw.mem matches 7.. if entity @e[type=text_display,tag=jkbw_bed_pink,scores={jkbw.Bed.State=3..4},limit=1] run scoreboard players set @s[team=jkbw.pink] jkbw.Player.State 4
+execute if score #teams jkbw.mem matches 8.. if entity @e[type=text_display,tag=jkbw_bed_gray,scores={jkbw.Bed.State=3..4},limit=1] run scoreboard players set @s[team=jkbw.gray] jkbw.Player.State 4
 
 # 自然爆装备
-execute if score #shop_mode jkbw.mem matches 2 run scoreboard players operation @s[tag=!jkbw_out] jkbw.Player.OwnExpLevelsReal /= #2 jkbw.mem
-execute if score #shop_mode jkbw.mem matches 2 run scoreboard players operation @s[tag=!jkbw_out] jkbw.Player.OwnExpLevels = @s jkbw.Player.OwnExpLevelsReal
+execute if score #res_mode jkbw.mem matches 2 run scoreboard players operation @s[scores={jkbw.Player.State=3}] jkbw.Player.OwnExpLevelsReal /= #2 jkbw.mem
+execute if score #res_mode jkbw.mem matches 2 run scoreboard players operation @s[scores={jkbw.Player.State=3}] jkbw.Player.OwnExpLevels = @s jkbw.Player.OwnExpLevelsReal
 execute as @s[tag=!jkbw_victim] run function jkbw:play/death/suicide
 execute as @s[tag=jkbw_victim] run function jkbw:play/death/victim
+execute if score #res_mode jkbw.mem matches 0 as @s[scores={jkbw.Player.OwnIrons=1..}] run tellraw @s [{"text":"-","color":"red"},{"score":{"name":"@s","objective":"jkbw.Player.OwnIrons"}}," ",{"translate":"item.minecraft.iron_ingot"}]
+execute if score #res_mode jkbw.mem matches 0 as @s[scores={jkbw.Player.OwnGolds=1..}] run tellraw @s [{"text":"-","color":"red"},{"score":{"name":"@s","objective":"jkbw.Player.OwnGolds"}}," ",{"translate":"item.minecraft.gold_ingot"}]
+execute if score #res_mode jkbw.mem matches 0 as @s[scores={jkbw.Player.OwnDiamonds=1..}] run tellraw @s [{"text":"-","color":"red"},{"score":{"name":"@s","objective":"jkbw.Player.OwnDiamonds"}}," ",{"translate":"item.minecraft.diamond"}]
+execute if score #res_mode jkbw.mem matches 0 as @s[scores={jkbw.Player.OwnEmeralds=1..}] run tellraw @s [{"text":"-","color":"red"},{"score":{"name":"@s","objective":"jkbw.Player.OwnEmeralds"}}," ",{"translate":"item.minecraft.emerald"}]
+execute if score #res_mode jkbw.mem matches 1..2 as @s[scores={jkbw.Player.OwnExpLevelsReal=1..}] run tellraw @s [{"text":"-","color":"red"},{"score":{"name":"@s","objective":"jkbw.Player.OwnExpLevelsReal"}}," ",{"storage":"jk:bw","nbt":"txt.item.shop.lvl"}]
 xp set @s 0 levels
 
 # 无床爆装备
-execute as @s[tag=jkbw_out] run function jkbw:play/res/player/final_kill
+execute as @s[scores={jkbw.Player.State=4}] run function jkbw:play/res/player/final_kill
+
+# 最终击杀
+execute as @s[team=jkbw.red] if entity @e[type=text_display,tag=jkbw_bed_red,scores={jkbw.Bed.State=3},limit=1] run tellraw @a {"storage":"jk:bw","nbt":"txt.print.final_kill","color":"aqua","bold":true}
+execute as @s[team=jkbw.blue] if entity @e[type=text_display,tag=jkbw_bed_blue,scores={jkbw.Bed.State=3},limit=1] run tellraw @a {"storage":"jk:bw","nbt":"txt.print.final_kill","color":"aqua","bold":true}
+execute if score #teams jkbw.mem matches 3.. as @s[team=jkbw.green] if entity @e[type=text_display,tag=jkbw_bed_green,scores={jkbw.Bed.State=3},limit=1] run tellraw @a {"storage":"jk:bw","nbt":"txt.print.final_kill","color":"aqua","bold":true}
+execute if score #teams jkbw.mem matches 4.. as @s[team=jkbw.yellow] if entity @e[type=text_display,tag=jkbw_bed_yellow,scores={jkbw.Bed.State=3},limit=1] run tellraw @a {"storage":"jk:bw","nbt":"txt.print.final_kill","color":"aqua","bold":true}
+execute if score #teams jkbw.mem matches 5.. as @s[team=jkbw.cyan] if entity @e[type=text_display,tag=jkbw_bed_cyan,scores={jkbw.Bed.State=3},limit=1] run tellraw @a {"storage":"jk:bw","nbt":"txt.print.final_kill","color":"aqua","bold":true}
+execute if score #teams jkbw.mem matches 6.. as @s[team=jkbw.white] if entity @e[type=text_display,tag=jkbw_bed_white,scores={jkbw.Bed.State=3},limit=1] run tellraw @a {"storage":"jk:bw","nbt":"txt.print.final_kill","color":"aqua","bold":true}
+execute if score #teams jkbw.mem matches 7.. as @s[team=jkbw.pink] if entity @e[type=text_display,tag=jkbw_bed_pink,scores={jkbw.Bed.State=3},limit=1] run tellraw @a {"storage":"jk:bw","nbt":"txt.print.final_kill","color":"aqua","bold":true}
+execute if score #teams jkbw.mem matches 8.. as @s[team=jkbw.gray] if entity @e[type=text_display,tag=jkbw_bed_gray,scores={jkbw.Bed.State=3},limit=1] run tellraw @a {"storage":"jk:bw","nbt":"txt.print.final_kill","color":"aqua","bold":true}

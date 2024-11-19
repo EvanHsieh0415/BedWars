@@ -59,11 +59,15 @@ summon item 10110223 2 10110223 {Item: {id: "minecraft:black_wool", Count: 1b}, 
 data modify entity @e[type=item,tag=jkbw_finalkill26,limit=1] Item set from entity @s EnderItems[{Slot: 26b}]
 
 # 清理
-kill @e[tag=jkbw_finalkill_item,type=item,nbt={Item: {id: "minecraft:black_wool"}}]
+kill @e[type=item,tag=jkbw_finalkill_item,nbt={Item: {id: "minecraft:black_wool"}}]
 clear @s
 
-# 传送到所在团队金点
-execute as @s[team=jkbw.red] run tp @e[tag=jkbw_finalkill_item] @e[limit=1,tag=jkbw_gold_time,tag=jkbw_res_red]
-execute as @s[team=jkbw.blue] run tp @e[tag=jkbw_finalkill_item] @e[limit=1,tag=jkbw_gold_time,tag=jkbw_res_blue]
-execute as @s[team=jkbw.green] run tp @e[tag=jkbw_finalkill_item] @e[limit=1,tag=jkbw_gold_time,tag=jkbw_res_green]
-execute as @s[team=jkbw.yellow] run tp @e[tag=jkbw_finalkill_item] @e[limit=1,tag=jkbw_gold_time,tag=jkbw_res_yellow]
+# 传送到所在团队资源点
+execute as @s[team=jkbw.red] run tp @e[type=item,tag=jkbw_finalkill_item] @e[type=text_display,tag=jkbw_res_red,limit=1]
+execute as @s[team=jkbw.blue] run tp @e[type=item,tag=jkbw_finalkill_item] @e[type=text_display,tag=jkbw_res_blue,limit=1]
+execute as @s[team=jkbw.green] run tp @e[type=item,tag=jkbw_finalkill_item] @e[type=text_display,tag=jkbw_res_green,limit=1]
+execute as @s[team=jkbw.yellow] run tp @e[type=item,tag=jkbw_finalkill_item] @e[type=text_display,tag=jkbw_res_yellow,limit=1]
+execute as @s[team=jkbw.cyan] run tp @e[type=item,tag=jkbw_finalkill_item] @e[type=text_display,tag=jkbw_res_cyan,limit=1]
+execute as @s[team=jkbw.white] run tp @e[type=item,tag=jkbw_finalkill_item] @e[type=text_display,tag=jkbw_res_white,limit=1]
+execute as @s[team=jkbw.pink] run tp @e[type=item,tag=jkbw_finalkill_item] @e[type=text_display,tag=jkbw_res_pink,limit=1]
+execute as @s[team=jkbw.gray] run tp @e[type=item,tag=jkbw_finalkill_item] @e[type=text_display,tag=jkbw_res_gray,limit=1]

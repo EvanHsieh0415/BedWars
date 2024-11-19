@@ -1,6 +1,6 @@
 ## 对每个新产生的实体只执行一次 as @e[tag=jkbw_new_entity] at @s
 # 认主
-scoreboard players operation @s jkbw.Player.ID = @p[gamemode=adventure,tag=jkbw_registered] jkbw.Player.ID
+scoreboard players operation @s jkbw.Player.ID = @p[gamemode=adventure,scores={jkbw.Player.State=2}] jkbw.Player.ID
 # 铁傀儡
 execute as @s[tag=jkbw_iron_golem] run function jkbw:play/special/iron_golem/new
 # 快速建造塔
@@ -9,28 +9,27 @@ execute as @s[tag=jkbw_tower] run function jkbw:play/special/tower/pos
 execute as @s[tag=jkbw_chest_player] run function jkbw:play/special/ender_chest/place
 # 安如磐石
 execute as @s[tag=jkbw_wall] run function jkbw:play/special/wall
-# tnt与爆炸羊
+# tnt
 execute as @s[tag=jkbw_tnt] run function jkbw:play/special/tnt/new
-
+# 水
+execute as @s[tag=jkbw_water] run function jkbw:play/special/water
 # 蠹虫
 scoreboard players set @s[tag=jkbw_silverfish] jkbw.Entity.Time 15
-
-# 火球计时3秒（防止实体堆积在加载区块外）
+# 火球
 scoreboard players set @s[tag=jkbw_fireball] jkbw.mem 60
-
 # 报警响铃
 scoreboard players set @s[tag=jkbw_alarm_marker] jkbw.mem 100
-
 # 急救平台
 execute as @s[tag=jkbw_slime] run function jkbw:play/special/platform/marker
-
 # 真·冰霜行者
 execute as @s[tag=jkbw_ice] run function jkbw:play/special/ice/marker
+# 冰桥
+execute as @s[tag=jkbw_ice_summoner] run function jkbw:play/special/ice/summoner
+# 凋零头
+scoreboard players set @s[tag=jkbw_skull] jkbw.Entity.Time 5
 
-# 现在不是新实体了
+# 重置
 tag @s remove jkbw_new_entity
-
-# 重置使用分数
 scoreboard players reset @a[scores={jkbw.Player.UseTNT=1..}] jkbw.Player.UseTNT
 scoreboard players reset @a[scores={jkbw.Player.UseIrongolem=1..}] jkbw.Player.UseIrongolem
 scoreboard players reset @a[scores={jkbw.Player.UseTower=1..}] jkbw.Player.UseTower

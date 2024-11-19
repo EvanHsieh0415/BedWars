@@ -5,11 +5,12 @@ execute if score @s jkbw.Player.OwnExpLevelsReal >= #urfEgolden_chestplate jkbw.
 execute as @s[tag=!jkbw_buy_success] run scoreboard players operation #shop_temp jkbw.mem = @s jkbw.Player.OwnExpLevelsReal
 execute as @s[tag=!jkbw_buy_success] run scoreboard players operation #shop_temp jkbw.mem -= #urfEgolden_chestplate jkbw.mem
 execute as @s[tag=!jkbw_buy_success] run scoreboard players operation #shop_temp jkbw.mem *= #-1 jkbw.mem
-tellraw @s[tag=!jkbw_buy_success] [{"text":"无法购买 ","color":"red"},{"translate":"item.minecraft.golden_chestplate","color":"yellow"}," ，你还需要 ",{"score":{"name": "#shop_temp","objective":"jkbw.mem"},"color":"yellow"}," 点经验！"]
+tellraw @s[tag=!jkbw_buy_success] [{"storage":"jk:bw","nbt":"txt.print.buy_cannot","color":"red"}," ",{"translate":"item.minecraft.golden_chestplate","color":"yellow"},", ",{"storage":"jk:bw","nbt":"txt.print.you_need"}," ",{"storage":"jk:bw","nbt":"txt.item.shop.lvl"},"*",{"score":{"name":"#shop_temp","objective":"jkbw.mem"},"color":"yellow"},"!"]
 playsound entity.villager.no player @s[tag=!jkbw_buy_success]
 
 # 成功购买
-give @s[tag=jkbw_buy_success] golden_chestplate{CanPlaceOn: ["#jkbw:canplaceon"], CanDestroy: ["#jkbw:candestroy"], Enchantments: [{id: "protection", lvl: 5s}], HideFlags: 28}
-tellraw @s[tag=jkbw_buy_success] [{"text":"成功购买 ","color":"green"},{"translate":"item.minecraft.golden_chestplate","color":"gold"}," ！"]
+give @s[tag=jkbw_buy_success] golden_chestplate{CanDestroy: ["#jkbw:candestroy"], Enchantments: [{id: "protection", lvl: 5s}], HideFlags: 28}
+
+tellraw @s[tag=jkbw_buy_success] [{"storage":"jk:bw","nbt":"txt.print.buy_ok","color":"green"}," ",{"translate":"item.minecraft.golden_chestplate","color":"gold"},"!"]
 playsound entity.experience_orb.pickup player @s[tag=jkbw_buy_success]
 scoreboard players operation @s[tag=jkbw_buy_success] jkbw.Player.OwnExpLevelsReal -= #urfEgolden_chestplate jkbw.mem
