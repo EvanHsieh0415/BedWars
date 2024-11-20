@@ -1,9 +1,9 @@
 # JK's BedWars ToolPack -- 起床战争工具包
-## Current version: beta1.5 for MC1.20.4
+## Current version: beta1.5.1 for MC1.20.4
 ### Things have been achieved
 
 1. ONLY support the overworld dimension.
-1. Support Chinese(simplified) & English.
+1. Support Chinese(simplified & traditional) & English.
 1. Support 64 players with 8 teams!
 1. In-game instructions.
 1. There are 3 game types in this datapack (Classic, Exp & URF), with tips next to Global Point.
@@ -21,7 +21,7 @@
 
 ### Notes
 
-Use **/reload** or **/function #load** to use menu, operate things **by steps**.
+Type `/reload` or `/function #load` to use menu, operate things **by steps**.
 
 More description, see “How2use”.
 

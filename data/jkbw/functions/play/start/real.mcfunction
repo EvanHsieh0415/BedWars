@@ -75,7 +75,7 @@ execute if score #bed_type jkbw.mem matches 2 as @e[type=text_display,tag=jkbw_b
 
 # 地图
 bossbar set jkbw:map visible false
-kill @e[type=marker,tag=jkbw_map_clear]
+kill @e[type=marker,tag=jkbw_map_clean]
 kill @e[type=marker,tag=jkbw_map_convert]
 kill @e[type=marker,tag=jkbw_back]
 function jkbw:load/settings/menu/worldspawn/current with storage jk:bw Map.cur

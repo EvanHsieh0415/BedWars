@@ -57,6 +57,20 @@ execute if score #lang jkbw.mem matches 2 if score #teams jkbw.mem matches 6.. r
 execute if score #lang jkbw.mem matches 2 if score #teams jkbw.mem matches 7.. run scoreboard players display name .pink jkbw.display {"text":"Pink","color":"light_purple"}
 execute if score #lang jkbw.mem matches 2 if score #teams jkbw.mem matches 8.. run scoreboard players display name .gray jkbw.display {"text":"Gray","color":"gray"}
 
+execute if score #lang jkbw.mem matches 3 run scoreboard players display name .line2 jkbw.display {"text":"==================","color":"white"}
+execute if score #lang jkbw.mem matches 3 run scoreboard players display name .line1 jkbw.display {"text":"------------------","color":"white"}
+execute if score #lang jkbw.mem matches 3 if score #test_mode jkbw.mem matches 1 run scoreboard players display name .tip0 jkbw.display {"text":"注：已開啟測試模式！","color":"red","bold":true}
+execute if score #lang jkbw.mem matches 3 run scoreboard players display name .tip1 jkbw.display {"text":"遊戲虽好，可不要貪玩喲！","color":"yellow"}
+execute if score #lang jkbw.mem matches 3 run scoreboard players display name .tip2 jkbw.display {"text":"資料包作者：JK137","color":"aqua"}
+execute if score #lang jkbw.mem matches 3 run scoreboard players display name .red jkbw.display {"text":"紅","color":"red"}
+execute if score #lang jkbw.mem matches 3 run scoreboard players display name .blue jkbw.display {"text":"藍","color":"blue"}
+execute if score #lang jkbw.mem matches 3 if score #teams jkbw.mem matches 3.. run scoreboard players display name .green jkbw.display {"text":"綠","color":"green"}
+execute if score #lang jkbw.mem matches 3 if score #teams jkbw.mem matches 4.. run scoreboard players display name .yellow jkbw.display {"text":"黃","color":"yellow"}
+execute if score #lang jkbw.mem matches 3 if score #teams jkbw.mem matches 5.. run scoreboard players display name .cyan jkbw.display {"text":"青","color":"aqua"}
+execute if score #lang jkbw.mem matches 3 if score #teams jkbw.mem matches 6.. run scoreboard players display name .white jkbw.display {"text":"白","color":"white"}
+execute if score #lang jkbw.mem matches 3 if score #teams jkbw.mem matches 7.. run scoreboard players display name .pink jkbw.display {"text":"粉","color":"light_purple"}
+execute if score #lang jkbw.mem matches 3 if score #teams jkbw.mem matches 8.. run scoreboard players display name .gray jkbw.display {"text":"灰","color":"gray"}
+
 execute if score #test_mode jkbw.mem matches 1 run scoreboard players display numberformat .tip0 jkbw.display blank
 scoreboard players display numberformat .tip1 jkbw.display blank
 scoreboard players display numberformat .tip2 jkbw.display blank
